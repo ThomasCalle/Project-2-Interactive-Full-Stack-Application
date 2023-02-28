@@ -1,0 +1,8 @@
+# DS_Store
+.DS_Store
+# Ignore settings.json file
+settings.json
+# Ignore .vscode folder
+.vscode/
+# nodemodules
+node_modules/
