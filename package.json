@@ -1,7 +1,7 @@
 {
     "name": "project-2-interactive-full-stack-application",
     "version": "1.0.0",
-    "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+    "description": "A web application that attempts to visualize time in a new way - in hopes of providing accessible time management",
     "main": "server.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,8 +11,8 @@
       "type": "git",
       "url": "git+https://github.com/ThomasCalle/Project-2-Interactive-Full-Stack-Application.git"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Stefan Marinov, Stephen Cardie, Thomas Calle",
+    "license": "MIT",
     "bugs": {
       "url": "https://github.com/ThomasCalle/Project-2-Interactive-Full-Stack-Application/issues"
     },
