@@ -65,9 +65,12 @@ THEN
 
 ## Screenshots:
 ### Figure 1. Screenshot
-![](./assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png) 
+***NOTE:  This is a demonstration example of 4K Screenshot. from another project ***
+![](/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png) 
 ### Figure .2 GIF
 The following animation demonstrates the application functionality:
+
+***NOTE:  This is a demonstration example of 4K GIF. from another project ***
 ![A user clicks on slots on the color-coded calendar and edits the events.](/assets/images/gif.GIF)
 
 ## Installation Process
