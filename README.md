@@ -22,13 +22,23 @@ As your first opportunity to show employers your collaborative skills and coding
 
 ## The Challenge:
 
+As a user (with time blindness/ADHD)
+I would like to see a visualization of my upcoming events
+WHEN I log in to the page,
+THEN I see my most pressing events graphically displayed, coloured based on the urgency of the event, and a list of my other, upcoming events
+WHEN I create an event
+THEN I am given the ability to set a category to define alert threshold periods
+WHEN I click on the event
+THEN I am given a calendar and the ability to add task events related to the event.
 
 ## User Story
 
 ```md
-AS AN "..."
-I WANT "..."
-SO THAT I "..."
+AS A person with the neurodevelopmental disorder (ADHD)
+I WANT a visual tracker that will add important events and details
+I WANT an application that will countdown the days to the event
+I WANT a minimal and clean ui/ux that stores my data 
+SO THAT I can manage my time effectively
 ```
 
 ## Acceptance Criteria
@@ -50,12 +60,12 @@ THEN
 ```
 
 ## Usage Instructions
-1. Open the document on your local device at the beginning of your day - you'll enter scheduled events/reminders into the planner to keep tracked.
-2. Scroll down to see the timeblocks for the current day.
-3. Click on the timeblocks type to edit the events.
-4. Click the save button (on the right) to save the event.
+1. Open the application at the beginning of your day - enter scheduled events,goals or reminders into the planner to keep tracked.
+2. Scroll to see ongoing timeblocks for the current day.
+3. Click on the timeblocks to enter events and edit details.
+4. Click the save button.
 5. Refresh the page to see the changes.
-6. Events not saved in timeblocks before refresh won't be tracked locally.
+6. Events not saved in timeblocks upon refresh won't be tracked locally.
 
 ## Solution URL:
 [Solution URL Link:]()
@@ -65,13 +75,13 @@ THEN
 
 ## Screenshots:
 ### Figure 1. Screenshot
-***NOTE:  This is a demonstration example of 4K Screenshot. from another project ***
-![](/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png) 
+***NOTE: This is a demonstration example of 4K Screenshot. NOT USED FOR FINALL.***
+![](./public/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png) 
 ### Figure .2 GIF
 The following animation demonstrates the application functionality:
 
-***NOTE:  This is a demonstration example of 4K GIF. from another project ***
-![A user clicks on slots on the color-coded calendar and edits the events.](/assets/images/gif.GIF)
+***NOTE: This is a demonstration example of 4K GIF. NOT USED FOR FINAL.***
+![ENTER brief decription of GIF.](./public/assets/images/gif.GIF)
 
 ## Installation Process
 1. Clone the Repository from GitHub 
@@ -116,9 +126,11 @@ SOFTWARE.
 ```
 
 ## Author
-
-Follow me on Github at [ThomasCalle](https://github.com/ThomasCalle)! Additional questions or concerns? feel free to contact me at thomas.calle@outlook.com.
+Follow our team on Github! Additional questions or concerns? Feel free to contact us!
+- [ThomasCalle](https://github.com/ThomasCalle)
+- [Stephen Cardie](https://github.com/omgthegreenranger)
+- [Stefan Marinov](https://github.com/scorpionfiko)
 
 See you soon!
 
-© 2023 [ThomasCalle](https://github.com/ThomasCalle). Confidential and Proprietary. All Rights Reserved.
+© 2023 [ThomasCalle](https://github.com/ThomasCalle), [Stephen Cardie](https://github.com/omgthegreenranger), [Stefan Marinov](https://github.com/scorpionfiko). Confidential and Proprietary. All Rights Reserved.
