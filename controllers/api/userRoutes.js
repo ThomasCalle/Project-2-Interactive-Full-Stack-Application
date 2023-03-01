@@ -1,9 +1,9 @@
-const { User, Category, Event, Settings } = require('../models');
+const { User, Category, Event, Settings } = require('../../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
 
 
-router.push('/', async (req, res) => {
+router.post('/', async (req, res) => {
         User.create(req.body)
     .then((newUser) => {
         res.status(200).res.json(newUser);
@@ -28,3 +28,5 @@ router.delete('/:id', async (req, res) => {
         }
     });
 });
+
+module.exports = router;
