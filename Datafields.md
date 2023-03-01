@@ -3,6 +3,7 @@
 
 ### Event
 - ID
+- title
 - Description
 - category_id - FK
 - Due Date
