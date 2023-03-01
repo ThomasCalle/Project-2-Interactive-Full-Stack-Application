@@ -1,18 +1,3 @@
 DROP DATABASE IF EXISTS AccessCal_db;
 CREATE DATABASE AccessCal_db;
 
-USE movies_db;
-
-CREATE TABLE event (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  movie_name VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    movie_id INT,
-    review TEXT NOT NULL,
-    FOREIGN KEY (_id)
-    REFERENCES movies(id)
-    ON DELETE SET NULL
-);
