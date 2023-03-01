@@ -27,7 +27,6 @@
 - Password - encrypt
 - Imported Calendars (array)
 
-
 ### Settings - Session
 - user_id - FK
 - view_type
