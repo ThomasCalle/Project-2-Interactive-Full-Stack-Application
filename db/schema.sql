@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS AccessCal_db;
-CREATE DATABASE AccessCal_db;
+DROP DATABASE IF EXISTS accesscal_db;
+CREATE DATABASE accesscal_db;
 
