@@ -12,6 +12,7 @@
 - Location?
 - User_ID - FK
 
+<!-- Defines the threshold of the event -->
 ### Category
 - ID
 - Name
@@ -26,7 +27,6 @@
 - Username
 - Password - encrypt
 - Imported Calendars (array)
-
 
 ### Settings - Session
 - user_id - FK
