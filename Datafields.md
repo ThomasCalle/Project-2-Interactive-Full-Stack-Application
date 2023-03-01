@@ -3,12 +3,10 @@
 
 ### Event
 - ID
+- title
 - Description
 - category_id - FK
 - Due Date
-- T1
-- T2
-- T3
 - Location?
 - User_ID - FK
 
@@ -17,13 +15,13 @@
 - ID
 - Name
 - Type
-- T1 - time until
-- T2 - time until
-- T3 - time until
+- T1 - Threshold 1 range (# weeks, # months, # days, etc.)
+- T2 - time until 2 range
+- T3 - time until 3 range
 
 ### User
 - ID
-- Name
+- Name (first and last)
 - Username
 - Password - encrypt
 - Imported Calendars (array)
