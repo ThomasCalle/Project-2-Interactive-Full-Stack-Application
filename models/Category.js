@@ -19,25 +19,21 @@ Category.init(
       type: DataTypes.STRING,
     },
     t1: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     t2: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false,
-      },
-      t3: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-    t3: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
     },
-    user_id: {
+    t3: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    event_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'event',
         key: 'id',
       },
     },
@@ -47,7 +43,7 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Category',
+    modelName: 'category',
   }
 );
 

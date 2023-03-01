@@ -5,13 +5,13 @@ class Event extends Model {}
 
 Event.init(
   {
-    ID: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    Description: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,19 +26,19 @@ Event.init(
       type: DataTypes.DATEONLY,
       allowNull: false,
     },
-    T1: {
+    t1: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    T2: {
+    t2: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    T3: {
+    t3: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    Location: {
+    location: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -55,7 +55,7 @@ Event.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Event',
+    modelName: 'event',
   }
 );
 
