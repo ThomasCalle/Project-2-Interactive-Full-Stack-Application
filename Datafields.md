@@ -23,6 +23,7 @@
 - Name (first and last)
 - Username
 - Password - encrypt
+- Imported Calendars (array)
 
 ### Settings - Session
 - user_id - FK
