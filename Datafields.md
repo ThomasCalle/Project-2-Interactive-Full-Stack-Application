@@ -12,6 +12,7 @@
 - Location?
 - User_ID - FK
 
+<!-- Defines the threshold of the event -->
 ### Category
 - ID
 - Name
