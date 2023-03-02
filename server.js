@@ -17,7 +17,16 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+const db = mysql.createConnection(
+  {
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'accesscal_db'
+  },
+  console.log(`Connected to the accesscal database.`)
 
+);
 
 
 const sess = {
@@ -34,8 +43,6 @@ const sess = {
     db: sequelize
   })
 };
-
-
 
 app.use(session(sess));
 
