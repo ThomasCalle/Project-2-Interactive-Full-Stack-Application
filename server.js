@@ -12,23 +12,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Won't have to bring models into server - but, you will have to bring them into the route
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 
 const hbs = exphbs.create({ helpers });
-
-const db = mysql.createConnection(
-  {
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'accesscal_db'
-  },
-  console.log(`Connected to the accesscal database.`)
-
-);
-
 
 const sess = {
   secret: 'Super secret secret',
