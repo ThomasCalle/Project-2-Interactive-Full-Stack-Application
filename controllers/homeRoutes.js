@@ -12,10 +12,10 @@ const router = require('express').Router();
 router.get('/', async (req, res) => {
     try {
         const eventData = await Event.findAll({
-            attributes:['id', 'title', 'description', 'due_date'],
-            where: {
-                id: user_id
-            },
+            attributes:['id', 'name', 'description', 'due_date'],
+            // where: {
+            //     id: user_id
+            // },
             include: [{
                 model: Category,
                 attributes: ['name', 'type', 'T1', 'T2', 'T3']
