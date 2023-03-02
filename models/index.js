@@ -25,5 +25,3 @@ User.hasMany(Event, {
   
 module.exports = { User, Category, Event };
 
-
-
