@@ -2,23 +2,25 @@ const User = require('./User');
 const Category = require('./Category');
 const Event = require('./Event');
 
-Event.hasMany(Category, {
-  foreignKey: 'event_id',
+Event.belongsTo(Category, {
+  foreignKey: 'category_id',
   onDelete: 'CASCADE'
 });
 
-Category.belongsTo(Event, {
-  foreignKey: 'event_id'
+Category.hasMany(Event, {
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE'
 });
 
 Event.belongsTo(User, {
-    foreignKey: 'user_id'
-  });
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
 
 User.hasMany(Event, {
   foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-  });
+  onDelete: 'CASCADE'
+});
    
   
 module.exports = { User, Category, Event };
