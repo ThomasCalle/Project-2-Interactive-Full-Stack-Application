@@ -13,13 +13,12 @@ Category.hasMany(Event, {
 });
 
 Event.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id'
+  // onDelete: 'CASCADE'
 });
 
 User.hasMany(Event, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+  foreignKey: 'user_id'
 });
    
   
