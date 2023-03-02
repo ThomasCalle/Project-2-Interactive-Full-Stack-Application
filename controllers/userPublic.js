@@ -21,9 +21,11 @@ router.get('/', async (req, res) => {
 });
 
 // Route for login.
-router.get('/:id', async (req,res) => {
+router.get('/:username', async (req,res) => {
     try {
-        const loginData = await User.findByPk(req.params.id, {
+        const loginData = await User.findOne(
+            {where: { username: req.params.username },
+
             attributes: ['id', 'username', 'password']
         });
 
