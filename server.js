@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const dayjs = require('dayjs');
 
 const helpers = require('./utils/helpers'); 
 const sequelize = require('./config/connection');
@@ -12,7 +13,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Won't have to bring models into server - but, you will have to bring them into the route
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 
@@ -32,6 +33,7 @@ const sess = {
     db: sequelize
   })
 };
+
 
 app.use(session(sess));
 
