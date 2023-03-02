@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
   <title>Tech Blog</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,16 +14,10 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-=======
-  <title>AssccessCal</title>
-  <link rel="stylesheet" href="">
-  <link rel="stylesheet" href="">
->>>>>>> f6d9e3f (thos/pub/js/login,logout,profile)
 
 </head>
 
 <body>
-<<<<<<< HEAD
   <nav class="navbar justified bg-info">
     <div class="">
       <div class="float-left">
@@ -70,37 +59,3 @@
 </body>
 
 </html>
-=======
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label=""></span>
-        <a href="/">title event</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="../profile.handlebars">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="../../public/js/logout.js"></script>
-  {{/if}}
-</body>
-
-</html>
->>>>>>> f6d9e3f (thos/pub/js/login,logout,profile)
