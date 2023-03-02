@@ -23,11 +23,16 @@ router.get('/', async (req, res) => {
 // Route for login.
 router.get('/:id', async (req,res) => {
     try {
-        const loginData = await User.findByPk( {
+        const loginData = await User.findByPk(req.params.id, {
             attributes: ['id', 'username', 'password']
-        })
-        res.render('login', loginData)
+        });
+
+        res.status(200).json(loginData);
+        // res.render('login', loginData);
+
     } catch (err) {
         res.render('login');
     }
 })
+
+module.exports = router;
