@@ -29,14 +29,7 @@ Category.init(
     t3: {
         type: DataTypes.STRING,
         allowNull: false,
-    },
-    event_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'event',
-        key: 'id',
-      },
-    },
+    }
   },
   {
     sequelize,
