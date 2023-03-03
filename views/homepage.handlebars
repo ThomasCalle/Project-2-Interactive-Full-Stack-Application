@@ -1,0 +1,24 @@
+<!-- Loop over each object in the projects array -->
+{{#each event as |event| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{}}}
+      <a href="/event/{{event.id}}">{{event.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="">{{}}</span>
+      needed!
+    </p>
+    <p>Created by {{event.user.name}} on {{format_date event.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{event.description}}
+    </p>
+  </div>
+</div>
+{{/each}}
