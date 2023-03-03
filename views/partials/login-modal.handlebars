@@ -1,0 +1,91 @@
+<!-- Modal -->
+<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-light">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">AccessCal Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex  justify-content-center">
+          <div class="border rounded">
+            <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login"
+                  type="button" role="tab" aria-controls="pills-login" aria-selected="true">Log In</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register"
+                  type="button" role="tab" aria-controls="pills-register" aria-selected="false">Register</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab"
+                tabindex="0">
+                <form class="form" id="loginForm">
+                  <!-- Email input -->
+                  <div class=" mb-4 mx-2">
+                    <label class="form-label " for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="user@example.com" />
+                  </div>
+                  <!-- Password input -->
+                  <div class="mb-4 mx-2">
+                    <label class="form-label " for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" class="form-control " />
+                  </div>
+                  <div class="d-flex justify-content-center">
+
+                    <!-- Submit button -->
+                    <button type="submit" class=" btn btn-primary btn-block mb-4">Sign in</button>
+
+                  </div>
+
+                </form>
+
+
+              </div>
+              <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab"
+                tabindex="0">
+                <form class="form" id="registerForm">
+                  <!-- Name input -->
+                  <div class=" mb-4 mx-2">
+                    <label class="form-label " for="registerFirstName">First Name:</label>
+                    <input type="input" id="registerFirstName" class="form-control" placeholder="Your first name" />
+                  </div>
+                  <div class=" mb-4 mx-2">
+                    <label class="form-label " for="registerLastName">First Name:</label>
+                    <input type="input" id="registerLastName" class="form-control" placeholder="Your first name" />
+                  </div>
+                  <!-- Email input -->
+                  <div class=" mb-4 mx-2">
+                    <label class="form-label " for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" class="form-control" placeholder="user@example.com" />
+                  </div>
+                  <!-- Password input -->
+                  <div class="mb-4 mx-2">
+                    <label class="form-label " for="registerPassword">Password (min 8 characters):</label>
+                    <input type="password" id="registerPassword" class="form-control " />
+                  </div>
+                  <div class="mb-4 mx-2">
+                    <label class="form-label " for="registerConfirmPassword">Confirm Password:</label>
+                    <input type="password" id="registerConfirmPassword" class="form-control " />
+                  </div>
+                  <!-- Submit button -->
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+            <script src="/js/login.js"></script>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+      </div>
+    </div>
+  </div>
+</div>

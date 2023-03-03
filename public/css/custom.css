@@ -87,6 +87,17 @@
   top: 0;
   left: 0;
 }
+
+#eventModal {
+  --bs-modal-width: 75%;
+}
+
+#loginModal {
+  --bs-modal-width: 20%;
+}
+
+
+
   @media screen and (max-width: 768px) {
     /* updates the styling of the top header container of the webpage */
     .article-title {
