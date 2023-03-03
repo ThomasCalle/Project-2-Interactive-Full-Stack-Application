@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
 router.get('/:id', async (req, res) => {
     try {    
         const eventData = await Event.findByPk(req.params.id, {
@@ -31,7 +30,8 @@ router.get('/:id', async (req, res) => {
             });
             res.status(200).json(eventData)
         } catch {
-            res.status(404).json("Not found")
+            res.status(404).json("Not found") 
+// Thomas: Please use a general 500 error server error instead 
         }
     }
 );
