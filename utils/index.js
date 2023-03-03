@@ -1,21 +1,20 @@
+const dayjs = require('dayjs');
+
 module.exports = {
-    calculateThresholds: (events) => {
-    for(let i = 0; i < events.length; i++) {
+    calculateThresholds: (eventData) => {
 
-        let dueDate = dayjs(events.due_date, "MM-DD-YYYY")
-        console.log(dueDate);
+         let dueDate = dayjs(eventData.due_date)
 
-        let t1 = events[i].category.t1.split(" ");
-        let t2 = events[i].category.t2.split(" ");
-        let t3 = events[i].category.t3.split(" ");
+        let t1 = eventData.category.t1.split(" ");
+        let t2 = eventData.category.t2.split(" ");
+        let t3 = eventData.category.t3.split(" ");
         t1 = dueDate.subtract(t1[0], t1[1]);
         t2 = dueDate.subtract(t2[0], t2[1]);
         t3 = dueDate.subtract(t3[0], t3[1]);
 
-        events[i].t1 = dayjs(t1).format("YYYY-MM-DD");
-        events[i].t2 = dayjs(t2).format("YYYY-MM-DD");
-        events[i].t3 = dayjs(t3).format("YYYY-MM-DD");
-    }    
-    return events;
-}
+        eventData.t1 = dayjs(t1).format("YYYY-MM-DD");
+        eventData.t2 = dayjs(t2).format("YYYY-MM-DD");
+        eventData.t3 = dayjs(t3).format("YYYY-MM-DD");
+        return eventData;
+    }
 }

@@ -1,7 +1,6 @@
 const { User, Category, Event } = require('../../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
-const {calculateThresholds} = require ('../../utils/index');
 
 // Assume session includes all User ID and relevant settings info.
 
@@ -48,9 +47,7 @@ router.get('/:id', async (req, res) => {
                     attributes: ['name', 'type', 't1', 't2', 't3']
                 }]
             });
-
-            calculateThresholds(eventData);
-            res.status(200).json(eventData);
+            res.status(200).json(eventData)
         } catch {
             res.status(404).json("Not found")
         }
