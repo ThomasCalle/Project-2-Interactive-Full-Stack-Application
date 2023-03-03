@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
         const events = eventData.map((event) => event.get({ plain: true }));
         res.render('homepage', { events, loggedIn: req.session.loggedIn, userId: req.session.userId, firstName: req.session.firstName });  
     } catch (err) {
-        res.render('login');
+        res.render('homepage');
     }
 });
 

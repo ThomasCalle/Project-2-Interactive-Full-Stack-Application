@@ -4,23 +4,34 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 $("#barGraph").click(async (event) => {
   const element = event.target;
   if (element.matches("rect")) {
-    // const articleData = await fetch(`/api/articles/${element.parentElement.dataset.id}`, {
-    //   method: "GET",
-    //   headers: { 'Content-Type': 'application/json' },
-    // });
-    // const article = await articleData.json();
-    // $("#test").html(JSON.stringify(article));
+    const eventData = await fetch(`/event/${element.parentElement.dataset.id}`, {
+      method: "GET",
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const event = await eventData.json();
+    data = {
+      timeline: dayjs(event.due_date).unix() - dayjs().unix(),
+      progress: dayjs().unix() - dayjs(event.created_at).unix(),
+    }
     renderPie(data);
   }
 });
 // deadline must subtract progress from it
-let data = { progress: 15, deadline: 30 };
+let data = {};
 
 const renderPie = (data) => {
-
-
   // colours depend on the treshhold stage;
-  const colors = ['#43ff64d9', '#43ff6426'];
+  let colours = [];
+  if (dayjs().isBefore(dayjs(data.t3))) {
+    colours = ['#33a532d9', '#33a53226'];
+  } else if (dayjs().isBefore(dayjs(data.t2))) {
+    colours = ['#33a532d9', '#33a53226'];
+  } else if (dayjs().isBefore(dayjs(data.t1))) {
+    colours = ['#F7B500d9', '#F7B50026'];
+  } else {
+    colours = ['#BB1E10d9', '#BB1E1026'];
+  }
+
 
   let sizes = {
     innerRadius: 50,
@@ -46,7 +57,7 @@ const renderPie = (data) => {
     .data(chart)
     .enter()
     .append("path")
-    .style("fill", (d, i) => colors[i]);
+    .style("fill", (d, i) => colours[i]);
 
   let angleInterpolation = d3.interpolate(generator.startAngle()(), generator.endAngle()());
 
@@ -94,7 +105,7 @@ const renderPie = (data) => {
     .attr("cx", function (d, i) { return 10 + i * 100 })
     .attr("cy", function (d, i) { return 225 }) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("r", 7)
-    .style("fill", function (d, i) { return colors[i] })
+    .style("fill", function (d, i) { return colours[i] })
 
   // Add one dot in the legend for each name.
   d3.select("#chart")
