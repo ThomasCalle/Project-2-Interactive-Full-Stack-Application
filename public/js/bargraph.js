@@ -79,7 +79,7 @@ function drawBarGraph(data) {
         .insert("a")
         .attr('data-id', item.id)
         .attr('data-bs-toggle', 'modal') 
-        .attr('data-bs-target', '#exampleModal') 
+        .attr('data-bs-target', '#eventModal') 
         .style('cursor', 'pointer')
         .append(() => this);
     });

@@ -1,15 +1,22 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+      <div class="modal-header bg-info text-light">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Event:</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div id="donutGraph">
-          <svg id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 250"></svg>
+        <div class="container-fluid">
+          <div class="row">
+            <div id="donutGraph" class="col-2">
+              <svg id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 250"></svg>
 
+            </div>
+            <div id="donutGraph" class="col-10 ">
+
+            </div>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

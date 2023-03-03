@@ -43,7 +43,7 @@
         <a id="logout" class="navbar-brand text-light p-3" href="/"><i
             class="m-1 fas fa-right-from-bracket"></i></i>Sign Out</a>
         {{ else }}
-        <a id="login" class="navbar-brand text-light p-3" href="/login"><i
+        <a href="" id="login" class="navbar-brand text-light p-3" data-bs-toggle="modal" data-bs-target="#loginModal"><i
             class="m-1 fas fa-right-to-bracket"></i></i>Sign In</a>
         {{/if}}
       </div>
@@ -51,7 +51,7 @@
 
   </nav>
 {{{ body }}}
-   
+   {{> login-modal}}
 
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
