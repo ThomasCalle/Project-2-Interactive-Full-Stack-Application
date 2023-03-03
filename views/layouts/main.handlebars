@@ -33,8 +33,8 @@
     </div>
     <div class="">
       <div class="content-center float-right">
-        {{#if username}}
-        <H3 class="text-light fst-italic text-center">Welcome {{username}} </H3>
+        {{#if firstName}}
+        <H3 class="text-light fst-italic text-center">Welcome {{firstName}} </H3>
         {{/if}}
         <a id="home" class="navbar-brand text-light p-3 " href="/"><i class="m-1 fas fa-home"></i>Home</a>
         <a id="dashboard" class="navbar-brand text-light p-3 " href="/dashboard"><i
@@ -50,13 +50,11 @@
     </div>
 
   </nav>
-{{{ body }}}
-   {{> login-modal}}
+  {{{ body }}}
+  {{> login-modal}}
 
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
-  <script src="/js/comment.js"></script>
-
   {{/if}}
 
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>

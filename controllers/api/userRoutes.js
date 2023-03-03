@@ -2,15 +2,26 @@ const { User, Category, Event, Settings } = require('../../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
 
-
+// register new user
 router.post('/', async (req, res) => {
-  User.create(req.body)
-    .then((newUser) => {
-      res.status(200).res.json(newUser);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
+  try {
+    const dbUserData = await User.create({
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
     });
+    // adds id and username to the session so that they can be displayed
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.userId  = dbUserData.get({plain:true}).id;
+      req.session.firstName  = dbUserData.get({plain:true}).first_name;
+      res.status(200).end();
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.put('/:id', async (req, res) => {
@@ -45,11 +56,11 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    // adds id and username to the session so that they can be displayed
+    // adds id and first name to the session so that they can be displayed
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userId = dbUserData.get({ plain: true }).id;
-      req.session.firstName = dbUserData.get({ plain: true }).firstName;
+      req.session.firstName = dbUserData.get({ plain: true }).first_name;
       res
         .status(200)
         .end();
@@ -58,6 +69,13 @@ router.post('/login', async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+// Logout
+router.post('/logout', (req, res) => {
+  req.session.destroy(() => {
+     res.status(204).end();
+ })
 });
 
 
