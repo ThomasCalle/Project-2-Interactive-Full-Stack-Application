@@ -1,8 +1,7 @@
-{{!-- condition temporarily disabled for bar graph testing --}}
 {{!-- homepage landing: if the user is logged, they get bar graph with data --}}
-{{!#if loggedIn}}
+{{#if loggedIn}}
   {{> homepage-summary}}
 {{!-- homepage landing: if the user is not logged, they get generic page asking to sign up/sing in --}}
-{{!else }}
+{{else }}
    {{> homepage-landing}}
-{{!/if }}
+{{/if }}

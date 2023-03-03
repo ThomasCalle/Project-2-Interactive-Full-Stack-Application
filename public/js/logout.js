@@ -4,20 +4,10 @@ const logout = async () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
-  
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data); // optional, logs the response JSON data
-        document.location.replace('/');
-      } else {
-        const data = await response.json();
-        console.log(data); // optional, logs the error JSON data
-        alert(response.statusText);
-      }
+      document.location.replace('/');
     } catch (error) {
       console.error(error);
     }
   };
   
-  export default logout;
-  
+  $("#logout").on("click", logout);
