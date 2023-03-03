@@ -1,4 +1,4 @@
-import logout from './logout'; 
+const { logout } = require('./logout'); 
 // Imports the logout function from the logout.js file
 
 const newFormHandler = async (event) => {
