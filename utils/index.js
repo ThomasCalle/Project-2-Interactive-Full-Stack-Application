@@ -1,21 +1,9 @@
-const dayjs = require('dayjs');
+module.exports = {
+    calculateThresholds: (events) => {
+    for(let i = 0; i < events.length; i++) {
 
-
-async function fetchEvents() {
-    const response =  await fetch('./event', {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        }
-    });
-    
-    let eventFetch = await response.json();
-    for(let i = 0; i < eventFetch.length; i++) {
-
-        // get Due Date and convert to unix time.
-        let dueDate = dayjs(eventFetch[i].due_date);
-        let dueDay = dayjs(dueDate).unix();
-
+        let dueDate = dayjs(events.due_date, "MM-DD-YYYY")
+        console.log(dueDate);
 
         // Get the array of the thresholds
         let t1 = eventFetch[i].category.t1.split(" ");
