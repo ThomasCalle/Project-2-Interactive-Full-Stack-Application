@@ -9,24 +9,25 @@ $("#barGraph").click(async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
     const event = await eventData.json();
-    data = {
-      timeline: dayjs(event.due_date).unix() - dayjs().unix(),
-      progress: dayjs().unix() - dayjs(event.created_at).unix(),
-    }
-    renderPie(data);
+
+    renderPie(event);
   }
 });
 // deadline must subtract progress from it
 let data = {};
 
-const renderPie = (data) => {
+const renderPie = (event) => {
+  data = {
+    timeline: dayjs(event.due_date).unix() - dayjs().unix(),
+    progress: dayjs().unix() - dayjs(event.created_at).unix(),
+  }
   // colours depend on the treshhold stage;
   let colours = [];
-  if (dayjs().isBefore(dayjs(data.t3))) {
+  if (dayjs().isBefore(dayjs(event.t3))) {
     colours = ['#33a532d9', '#33a53226'];
-  } else if (dayjs().isBefore(dayjs(data.t2))) {
+  } else if (dayjs().isBefore(dayjs(event.t2))) {
     colours = ['#33a532d9', '#33a53226'];
-  } else if (dayjs().isBefore(dayjs(data.t1))) {
+  } else if (dayjs().isBefore(dayjs(event.t1))) {
     colours = ['#F7B500d9', '#F7B50026'];
   } else {
     colours = ['#BB1E10d9', '#BB1E1026'];

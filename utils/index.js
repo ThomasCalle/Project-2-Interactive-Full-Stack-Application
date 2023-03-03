@@ -1,9 +1,9 @@
-module.exports = {
-    calculateThresholds: (events) => {
-    for(let i = 0; i < events.length; i++) {
+const dayjs = require('dayjs');
 
-        let dueDate = dayjs(events.due_date, "MM-DD-YYYY")
-        console.log(dueDate);
+module.exports = {
+    calculateThresholds: (eventData) => {
+
+         let dueDate = dayjs(eventData.due_date)
 
         // Get the array of the thresholds
         let t1 = eventFetch[i].category.t1.split(" ");

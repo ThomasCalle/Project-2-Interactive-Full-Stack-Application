@@ -9,8 +9,8 @@
     {
         "name": "Birthday - gifts",
         "type": "long-term",
-        "t1": "2 weeks",
-        "t2": "6 weeks",
+        "t1": "1 day",
+        "t2": "6 week",
         "t3": "3 month"
     }
 ]
