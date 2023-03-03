@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
+const dayjs = require('dayjs');
 
 const helpers = require('./utils/helpers'); 
 const sequelize = require('./config/connection');
@@ -32,6 +33,7 @@ const sess = {
     db: sequelize
   })
 };
+
 
 app.use(session(sess));
 
