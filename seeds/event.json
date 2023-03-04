@@ -5,7 +5,7 @@
         "category_id": 1,
         "due_date": "12-14-2023",
         "location": "",
-        "user_id": 1
+        "user_id": 2
     },
     {
         "name": "Daughter's birthday",
@@ -13,7 +13,7 @@
         "category_id": 2,
         "due_date": "03-13-2023",
         "location": "",
-        "user_id": 1
+        "user_id": 2
     },
     {
         "name": "Finish the project",
@@ -21,6 +21,6 @@
         "category_id": 3,
         "due_date": "03-06-2023",
         "location": "",
-        "user_id": 2
+        "user_id": 1
     }
 ]
