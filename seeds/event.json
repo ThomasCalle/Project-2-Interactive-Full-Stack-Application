@@ -14,5 +14,13 @@
         "due_date": "03-13-2023",
         "location": "",
         "user_id": 1
+    },
+    {
+        "name": "Finish the project",
+        "description": "The accesscal project!",
+        "category_id": 3,
+        "due_date": "03-06-2023",
+        "location": "",
+        "user_id": 2
     }
 ]

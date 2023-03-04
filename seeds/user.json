@@ -3,5 +3,11 @@
     "last_name": "Cardie",
     "email": "stephen@stegra.ca",
     "password": "passingword"
+},
+{
+    "first_name": "Stefan",
+    "last_name": "MArinov",
+    "email": "test@test.com",
+    "password": "passingword"
 }
 ]
