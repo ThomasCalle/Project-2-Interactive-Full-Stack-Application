@@ -1,12 +1,11 @@
-$("#update-modal-btn").click(async (catList) => {
+$("#update-modal-btn").click(async () => {
       const catFetch = await fetch('/category/', {
         method: "GET",
         headers: { 'Content-Type': 'application/json' },
       });
-      catList = await catFetch.json();
+      var catList = await catFetch.json();
       console.log(catList);
       
       
       return catList;
-    
     });
