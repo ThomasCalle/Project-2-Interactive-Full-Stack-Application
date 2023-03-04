@@ -19,12 +19,6 @@ module.exports = {
       } else {
         return `<span for="img" aria-label="gear">⚙️</span>`;
       }
-    },
-    // catList: () => {
-    //   return catFetch = fetch('/category', {
-    //       method: "GET",
-    //       headers: { 'Content-Type': 'application/json' },
-    //     });
-    // }
+    }
   };
   

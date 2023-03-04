@@ -6,6 +6,5 @@ $("#update-modal-btn").click(async (catList) => {
       var catList = await catFetch.json();
       console.log(catList);
       
-      
       return catList;
     });
