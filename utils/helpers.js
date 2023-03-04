@@ -19,9 +19,6 @@ module.exports = {
       } else {
         return `<span for="img" aria-label="gear">⚙️</span>`;
       }
-    },
-    // check_cat: () => {
-    //   return this.ariaPressed;
-    // },
+    }
   };
   
