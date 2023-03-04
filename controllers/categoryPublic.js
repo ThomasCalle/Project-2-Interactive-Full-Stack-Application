@@ -1,8 +1,9 @@
 const { User, Category, Event } = require('../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const categoryData = await Category.findAll({
             attributes:['id', 'name', 'type', 't1', 't2', 't3'],
@@ -15,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Route for login.
-router.get('/:id', async (req,res) => {
+router.get('/:id', withAuth, async (req,res) => {
     try {
         const categoryData = await Category.findByPk(req.params.id, {
             attributes: ['id', 'name', 'type', 't1', 't2', 't3']
