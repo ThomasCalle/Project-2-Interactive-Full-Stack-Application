@@ -8,8 +8,10 @@ router.get('/', async (req, res) => {
             attributes:['id', 'name', 'type', 't1', 't2', 't3'],
         });
         // res.render('homepage', categoryData);
-        const catList = await categoryData.json;
-        res.render('partials/entry-modal', catList);
+        // const catList = await categoryData.json;
+        const catList = categorytData.map((catList) => catList.get({ plain: true }));
+
+        res.json(catList);
     } catch (err) {
         res.status(500)
     }
