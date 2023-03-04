@@ -1,7 +1,7 @@
 const { User, Category, Event } = require('../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
-const {calculateThresholds} = require ('../utils/index');
+const {calculateThresholdsDates, calculateThresholdBarPlots} = require ('../utils/index');
 
 router.get('/', async (req, res) => {
     try {
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
             }
         })
         const events = eventData.map((event) => event.get({ plain: true }));
-        res.status(200).json(events);
+        res.status(200).json(calculateThresholdBarPlots(events));
     } catch (err) {
         res.render('homepage');
     }
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
             }]
         });
         const event = eventData.get({ plain: true });
-        res.status(200).json(calculateThresholds(event));
+        res.status(200).json(calculateThresholdsDates(event));
     } catch {
         res.render('homepage');
     }
