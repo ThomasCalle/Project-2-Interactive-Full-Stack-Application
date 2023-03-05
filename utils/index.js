@@ -2,7 +2,7 @@ const dayjs = require('dayjs');
 
 module.exports = {
     calculateThresholdsDates: (eventData) => {
-        //okay, last 
+
         let dueDate = dayjs(eventData.due_date)
 
         let t1 = eventData.category.t1.split(" ");
@@ -28,6 +28,7 @@ module.exports = {
             let dueDate = dayjs(eventData[i].due_date);
             let dueDay = dayjs(dueDate).unix();
             let nowDay = dayjs().unix();
+
             // Get the array of the thresholds
             let t1 = eventData[i].category.t1.split(" ");
             let t2 = eventData[i].category.t2.split(" ");
@@ -43,7 +44,9 @@ module.exports = {
             t3 = dueDay - t3date;
             const total = t1+t2+t3;
 
+
             let nowDate = dueDay - nowDay;
+
             // calculate timeFrame with t3 as outer field, divide by nine for unix duration of each threshold.
             const bargraphLength = 9
             let timeFrame = t3;
@@ -58,5 +61,5 @@ module.exports = {
             eventData[i].nowTime = Math.ceil(nowDate / timeFrame);
         }
         return eventData;
-    },
+    }
 }

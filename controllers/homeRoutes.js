@@ -10,12 +10,15 @@ const router = require('express').Router();
 //  - use helper to calculate T1, T2, T3 in to API
 
 router.get('/', async (req, res) => {
+    if (!req.session.loggedIn) {
+        return res.render('homepage');
+    }
     try {
         const eventData = await Event.findAll({
             attributes:['id', 'name', 'description', 'due_date'],
-            // where: {
-            //     id: user_id
-            // },
+            where: {
+                id: req.session.userId
+            },
             include: [{
                 model: Category,
                 attributes: ['name', 'type', 'T1', 'T2', 'T3']
@@ -26,6 +29,10 @@ router.get('/', async (req, res) => {
     } catch (err) {
         res.render('homepage');
     }
+});
+
+router.get('/login', async (req, res) => {
+    return res.render('login');
 });
 
 module.exports = router;

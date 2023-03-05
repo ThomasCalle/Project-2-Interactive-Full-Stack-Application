@@ -1,43 +1,72 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div class="m-5 d-flex  justify-content-center">
+  <div class="border rounded">
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login"
+          type="button" role="tab" aria-controls="pills-login" aria-selected="true">Log In</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register"
+          type="button" role="tab" aria-controls="pills-register" aria-selected="false">Register</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab"
+        tabindex="0">
+        <form class="form" id="loginPageForm">
+          <!-- Email input -->
+          <div class=" mb-4 mx-2">
+            <label class="form-label " for="loginPageEmail">Email:</label>
+            <input type="email" id="loginPageEmail" class="form-control" placeholder="user@example.com" />
+          </div>
+          <!-- Password input -->
+          <div class="mb-4 mx-2">
+            <label class="form-label " for="loginPagePassword">Password:</label>
+            <input type="password" id="loginPagePassword" class="form-control " />
+          </div>
+          <div class="d-flex justify-content-center">
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+            <!-- Submit button -->
+            <button type="submit" class=" btn btn-primary btn-block mb-4">Sign in</button>
 
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+          </div>
+
+        </form>
+
+
       </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
+      <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab" tabindex="0">
+        <form class="form" id="registerPageForm">
+          <!-- Name input -->
+          <div class=" mb-4 mx-2">
+            <label class="form-label " for="registerPageFirstName">First Name:</label>
+            <input type="input" id="registerPageFirstName" class="form-control" placeholder="Your first name" />
+          </div>
+          <div class=" mb-4 mx-2">
+            <label class="form-label " for="registerPageLastName">First Name:</label>
+            <input type="input" id="registerPageLastName" class="form-control" placeholder="Your first name" />
+          </div>
+          <!-- Email input -->
+          <div class=" mb-4 mx-2">
+            <label class="form-label " for="registerPageEmail">Email:</label>
+            <input type="email" id="registerPageEmail" class="form-control" placeholder="user@example.com" />
+          </div>
+          <!-- Password input -->
+          <div class="mb-4 mx-2">
+            <label class="form-label " for="registerPagePassword">Password (min 8 characters):</label>
+            <input type="password" id="registerPagePassword" class="form-control " />
+          </div>
+          <div class="mb-4 mx-2">
+            <label class="form-label " for="registerPageConfirmPassword">Confirm Password:</label>
+            <input type="password" id="registerPageConfirmPassword" class="form-control " />
+          </div>
+          <!-- Submit button -->
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
+      <script src="/js/loginPage.js"></script>
+    </div>
   </div>
 </div>
-
-<script src="../public/js/login.js"></script>
-
