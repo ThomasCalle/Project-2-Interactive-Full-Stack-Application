@@ -9,15 +9,23 @@ const router = require('express').Router();
 //  - associate category table with each event
 //  - use helper to calculate T1, T2, T3 in to API
 
-router.post('/', (req, res) => {
-    Event.create(req.body)
-        .then((newEvent) => {
-            res.status(200).res.json(newEvent);
-        })
-        .catch((err) => {
-            res.status(500).json(err + req.body);
+router.post('/', async (req, res) => {
+    try {
+        console.log(req.body.id);
+        const eventData = await Event.create({
+            name: req.body.name,
+            description: req.body.description,
+            due_date: req.body.due_date,
+            location: "",
+            category_id: req.body.category_id,
+            // "user_id": req.session.id
         });
-});
+        res.send(eventData)
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
 
 module.exports = router;
 
