@@ -10,6 +10,8 @@ $("#barGraph").click(async (event) => {
     });
     const event = await eventData.json();
 
+    await renderEvent(event);
+
     renderPie(event);
   }
 });
@@ -122,4 +124,28 @@ const renderPie = (event) => {
     .attr("text-anchor", "left")
     .style("alignment-baseline", "middle")
 
+}
+
+const renderEvent = async (event) => {
+  $("#exampleModalLabel").html(event.name);
+  $('#eventDescription').val(event.description);
+  $('#eventDueDate').val(event.due_date);
+
+  let phase = "";
+  let nextPhase = "";
+  if (dayjs().isBefore(dayjs(event.t3))) {
+    phase = "Normal";
+    nextPhase = event.t3;
+  } else if (dayjs().isBefore(dayjs(event.t2))) {
+    phase = "Normal, and approaching Alert phase";
+    nextPhase = event.t2;
+  } else if (dayjs().isBefore(dayjs(event.t1))) {
+    phase = "Alert, and approaching Critical phase";
+    nextPhase = event.t1;
+  } else {
+    phase = "Critical phase and approaching the deadline";
+    nextPhase = event.due_date;
+  }
+  $('#eventPhase').val(phase);
+  $('#eventNextPhase').val(nextPhase);
 }

@@ -7,21 +7,36 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="container-fluid">
           <div class="row">
-            <div id="donutGraph" class="col-2">
+            <div id="donutGraph" class="col-4">
               <svg id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 250"></svg>
 
             </div>
-            <div id="donutGraph" class="col-10 ">
+            <div id="eventData" class="col-8 ">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="eventDescription" disabled>
+                <label for="eventDescription">Description</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="eventDueDate" disabled>
+                <label for="eventDueDate">Due Date</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="eventPhase" disabled>
+                <label for="eventPhase">Event Phase</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="eventNextPhase" disabled>
+                <label for="eventNextPhase">Next Phase Change</label>
+              </div>
+            </div>
+            <div id="thesholdData" class="col-5 ">
 
             </div>
           </div>
-        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>
