@@ -36,11 +36,9 @@ async function catFetcher(catList) {
 
 
 
-
 //event listener for modal
 subNewBtn.addEventListener('click', catFetcher());
 
-// editEvent.addEventListener('click', () => { });
 
 manageEvent.addEventListener('click', async (event) => {
   console.log(event.target.dataset.id)
@@ -188,4 +186,8 @@ function categorySelects() {
     </select>`    
   }
 };
+
+function whichPartial() {
+  document
+}
 
