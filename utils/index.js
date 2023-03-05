@@ -59,6 +59,4 @@ module.exports = {
         }
         return eventData;
     },
-
-
 }

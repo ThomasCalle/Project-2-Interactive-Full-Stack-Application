@@ -9,8 +9,8 @@ router.get('/', async (req, res) => {
         });
         // res.render('homepage', categoryData);
         // const catList = await categoryData.json;
-        const catList = categoryData.map((catList) => catList.get({ plain: true }));
-        res.json(catList);
+        const catData = categoryData.map((catData) => catData.get({ plain: true }));
+        res.json(catData);
     } catch (err) {
         res.status(500)
     }
