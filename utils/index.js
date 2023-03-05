@@ -45,7 +45,7 @@ module.exports = {
             t3 = dueDay - t3date;
             const total = t1+t2+t3;
             // calculate timeFrame with t3 as outer field, divide by nine for unix duration of each threshold.
-            const bargraphLength = 9
+            const bargraphLength = 9;
             let timeFrame = t3;
             timeFrame = timeFrame / bargraphLength;
     
@@ -56,9 +56,7 @@ module.exports = {
             eventData[i].t1 = (t1 / timeFrame );
             eventData[i].t2 = (t2 / timeFrame );
             eventData[i].t3 = (t3 / timeFrame );
-            eventData[i].t1pct = t1 / total * bargraphLength;
-            eventData[i].t2pct = t2 / total * bargraphLength;
-            eventData[i].t3pct = t3 / total * bargraphLength;
+            eventData[i].progress = Math.max((dayjs().unix() - t3date) / (t3), 0) * bargraphLength;
 
         }
         return eventData;
