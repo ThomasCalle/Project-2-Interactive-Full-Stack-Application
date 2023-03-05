@@ -1,3 +1,4 @@
+
 // login handler - verifes user credentials and logs in the user
 const loginFormHandler = async (event) => {
   event.preventDefault();
