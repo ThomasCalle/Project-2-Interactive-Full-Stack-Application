@@ -8,8 +8,6 @@ router.get('/', withAuth, async (req, res) => {
         const categoryData = await Category.findAll({
             attributes:['id', 'name', 'type', 't1', 't2', 't3'],
         });
-        // res.render('homepage', categoryData);
-        // const catList = await categoryData.json;
         const catData = categoryData.map((catData) => catData.get({ plain: true }));
         res.json(catData);
     } catch (err) {

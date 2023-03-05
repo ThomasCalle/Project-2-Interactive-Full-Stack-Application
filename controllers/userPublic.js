@@ -6,9 +6,9 @@ router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
             attributes:['id', 'name', 'description', 'due_date'],
-            // where: {
-            //     id: user_id
-            // },
+            where: {
+                id: req.session.userId
+            },
             include: [{
                 model: Category,
                 attributes: ['name', 'type', 'T1', 'T2', 'T3']
