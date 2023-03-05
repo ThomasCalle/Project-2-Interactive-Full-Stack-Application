@@ -2,6 +2,8 @@ const subNewBtn = document.getElementById("sub-new-event");
 const subNewForm = document.getElementById("newEvent");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
+const editEvent = document.getElementById("editEvent");
+const deleteEvent = document.getElementById("deleteEvent");
 // Arrays for cascading dropdown (didn't end up working in time)
 
 // var months = [];
@@ -34,8 +36,16 @@ async function catFetcher(catList) {
 };
 
 
+
+
 //event listener for modal
 subNewBtn.addEventListener('click', catFetcher());
+
+editEvent.addEventListener('click', () => {
+  document.getElementById("eventDescription").disabled = false;
+  document.getElementById("eventDueDate").disabled = false;
+  document.getElementById("eventCategory").disabled = false;
+})
 
 $(document).ready(() => {
   $("#catFormFields").hide();
