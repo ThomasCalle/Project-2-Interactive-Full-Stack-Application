@@ -155,7 +155,7 @@ function categorySelects() {
     let j = i + 1
     const catNums = document.getElementById(`t${j}`);
     catNums.innerHTML = 
-    `<div class="input-group mb-4 mx-2">
+    `<div class="input-group mb-2">
     <span for="threshold${j}" class="input-group-text">Threshold ${j}:</span>
     <input type="text" name="t${j}int" class="form-control">
     <select name="t${j}dur" class="form-select">
