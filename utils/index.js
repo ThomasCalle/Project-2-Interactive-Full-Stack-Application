@@ -59,6 +59,8 @@ module.exports = {
             eventData[i].t2pct = t2 / total * bargraphLength;
             eventData[i].t3pct = t3 / total * bargraphLength;
             eventData[i].nowTime = Math.ceil(nowDate / timeFrame);
+            eventData[i].progress = Math.max((dayjs().unix() - t3date) / (t3), 0) * bargraphLength;
+
         }
         return eventData;
     }
