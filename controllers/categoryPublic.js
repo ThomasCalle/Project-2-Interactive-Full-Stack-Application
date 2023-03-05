@@ -9,9 +9,11 @@ router.get('/', withAuth, async (req, res) => {
             attributes:['id', 'name', 'type', 't1', 't2', 't3'],
         });
         // res.render('homepage', categoryData);
-        res.status(200).json(categoryData)
+        // const catList = await categoryData.json;
+        const catData = categoryData.map((catData) => catData.get({ plain: true }));
+        res.json(catData);
     } catch (err) {
-        res.render('login');
+        res.status(500)
     }
 });
 
