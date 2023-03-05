@@ -1,6 +1,7 @@
 const { User, Category, Event, Settings } = require('../../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
+const { loadCategories } = require('./autoLoad');
 
 // register new user
 router.post('/', async (req, res) => {
@@ -18,6 +19,9 @@ router.post('/', async (req, res) => {
       req.session.firstName  = dbUserData.get({plain:true}).first_name;
       res.status(200).end();
     });
+    const autoCategory = loadCategories();
+    autoCategory.forEach(category => {category.user_id = dbUserData.get({plain:true}).id; })
+    Category.bulkCreate(autoCategory);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
