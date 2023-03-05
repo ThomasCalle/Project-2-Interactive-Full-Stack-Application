@@ -1,8 +1,8 @@
 const subNewBtn = document.getElementById("sub-new-event");
 const subNewForm = document.getElementById("newEvent");
-const addNewCat = document.getElementById("add-new-cat");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
+const manageEvent = document.getElementById("buttons");
 // Arrays for cascading dropdown (didn't end up working in time)
 
 // var months = [];
@@ -35,8 +35,32 @@ async function catFetcher(catList) {
 };
 
 
+
+
 //event listener for modal
 subNewBtn.addEventListener('click', catFetcher());
+
+// editEvent.addEventListener('click', () => { });
+
+manageEvent.addEventListener('click', async (event) => {
+  console.log(event.target.dataset.id)
+  const delId = event.target.dataset.id;
+  if(event.target.id == "deleteEvent") {
+    fetch('/api/events/' + delId, {
+      method: "DELETE"
+    }).then(res => res.text())
+    .then(res => console.log(res))
+  } else if (event.target.id == "editEvent") {
+    const eventFetch = await fetch(`/event/${event.target.dataset.id}`, {
+      method: "GET",
+      headers: { 'Content-Type': 'application/json' },
+    })
+    var eventData = await eventFetch.json();
+    console.log(eventData)
+    
+  }
+})
+
 
 $(document).ready(() => {
   $("#catFormFields").hide();
@@ -67,8 +91,8 @@ async function catPost() {
 
   var catBody =
   {
-    "name": catData.name,
-    "type": catData.type,
+    "name": catData.catName,
+    "type": catData.catType,
     "t1": catData.t1int + " " + catData.t1dur,
     "t2": catData.t2int + " " + catData.t2dur,
     "t3": catData.t3int + " " + catData.t3dur
@@ -119,12 +143,11 @@ async function catPost() {
 // event listener for new Event.
 subNewBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log(addNewCat.ariaPressed);
-  if (addNewCat.ariaPressed === 'true') {
+  if ($("#cat-select").val() === "0") {
     catPost();
     return;
 
-  } else if (addNewCat.ariaPressed === 'false') {
+  } else {
     var formData = {};
     var form = new FormData(subNewForm);
     form.forEach((value, key) => (formData[key] = value));

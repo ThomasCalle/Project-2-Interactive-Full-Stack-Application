@@ -28,7 +28,7 @@ router.get('/:id', withAuth, async (req, res) => {
             attributes: ['id', 'name', 'description', 'due_date', 'created_at'],
             include: [{
                 model: Category,
-                attributes: ['name', 'type', 't1', 't2', 't3']
+                attributes: ['id', 'name', 'type', 't1', 't2', 't3']
             }]
         });
         const event = eventData.get({ plain: true });

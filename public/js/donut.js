@@ -130,6 +130,12 @@ const renderEvent = async (event) => {
   $("#exampleModalLabel").html(event.name);
   $('#eventDescription').val(event.description);
   $('#eventDueDate').val(event.due_date);
+  $('#eventCategory').val(event.category.name)
+
+  document.getElementById("buttons").innerHTML =
+  `<button id="editEvent" type="button" class="btn btn-primary" aria-label="Close" data-bs-toggle="modal" data-bs-target="#entryModal" data-id=${event.category.id}>Edit Event</button>
+  <button id="deleteEvent" type="button" class="btn btn-danger" data-id=${event.category.id}>Delete Event</button>`;
+
 
   let phase = "";
   let nextPhase = "";

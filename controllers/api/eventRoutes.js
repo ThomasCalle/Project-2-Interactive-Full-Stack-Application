@@ -1,6 +1,8 @@
 const { User, Category, Event } = require('../../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
+
 
 // Assume session includes all User ID and relevant settings info.
 
@@ -18,7 +20,7 @@ router.post('/', async (req, res) => {
             due_date: req.body.due_date,
             location: "",
             category_id: req.body.category_id,
-            // "user_id": req.session.id
+            user_id: req.session.userId
         });
         res.send(eventData)
       } catch (err) {
@@ -26,6 +28,41 @@ router.post('/', async (req, res) => {
         res.status(500).json(err);
       }
     });
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    console.log(req.body);
+    const eventUpdate = await Event.update({
+    where: {
+      id: req.body.id
+    },
+    body: {
+      name: req.body.name,
+      description: req.body.description,
+      due_date: req.body.due_date,
+      location: "",
+      category_id: req.body.category_id,
+      }
+    })
+    res.send(eventData)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+  })
+
+router.delete('/:id', withAuth, async (req, res) => {
+
+  try {
+    Event.destroy({
+      where: {
+      id: req.params.id
+    }}
+      );
+  } catch {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
 
