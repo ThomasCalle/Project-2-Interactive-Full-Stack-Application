@@ -96,6 +96,8 @@
   --bs-modal-width: 20%;
 }
 
+
+
 @media screen and (max-width: 998px) {
 
    #eventModal {
