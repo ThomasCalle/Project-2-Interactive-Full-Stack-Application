@@ -1,16 +1,18 @@
 <section class="card m-3">
- <p>user is signed in sees the chart summary and any other information we want </p>
  {{!-- div id for the bar graph --}}
   <div id="barGraph" class="svg-container"></div>
 {{!-- the modal that shows up upon clicking the bar graph --}}
   {{> event-modal}}
+
 </section>
-<section>
+<section class="col-1 m-3">
   <!-- Button trigger modal -->
-<button type="button" id="update-modal-btn-event" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#entryModal" data-new-select="event">
-  Add New Entry
+  <button type="button" id="update-modal-btn-event" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#entryModal" data-new-select="event">
+  New Event
 </button> 
 {{> entry-modal}}
+
+
 </section>
   <script type="module" src="/js/donut.js"></script>
   <script type="module" src="/js/bargraph.js"></script>

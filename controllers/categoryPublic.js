@@ -7,6 +7,9 @@ router.get('/', withAuth, async (req, res) => {
     try {
         const categoryData = await Category.findAll({
             attributes:['id', 'name', 'type', 't1', 't2', 't3'],
+            where: {
+                user_id: req.session.userId
+            }
         });
         // res.render('homepage', categoryData);
         // const catList = await categoryData.json;
