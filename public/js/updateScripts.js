@@ -2,8 +2,7 @@ const subNewBtn = document.getElementById("sub-new-event");
 const subNewForm = document.getElementById("newEvent");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
-const editEvent = document.getElementById("editEvent");
-const deleteEvent = document.getElementById("deleteEvent");
+const manageEvent = document.getElementById("buttons");
 // Arrays for cascading dropdown (didn't end up working in time)
 
 // var months = [];
@@ -41,11 +40,27 @@ async function catFetcher(catList) {
 //event listener for modal
 subNewBtn.addEventListener('click', catFetcher());
 
-editEvent.addEventListener('click', () => {
-  document.getElementById("eventDescription").disabled = false;
-  document.getElementById("eventDueDate").disabled = false;
-  document.getElementById("eventCategory").disabled = false;
+// editEvent.addEventListener('click', () => { });
+
+manageEvent.addEventListener('click', async (event) => {
+  console.log(event.target.dataset.id)
+  const delId = event.target.dataset.id;
+  if(event.target.id == "deleteEvent") {
+    fetch('/api/events/' + delId, {
+      method: "DELETE"
+    }).then(res => res.text())
+    .then(res => console.log(res))
+  } else if (event.target.id == "editEvent") {
+    const eventFetch = await fetch(`/event/${event.target.dataset.id}`, {
+      method: "GET",
+      headers: { 'Content-Type': 'application/json' },
+    })
+    var eventData = await eventFetch.json();
+    console.log(eventData)
+    
+  }
 })
+
 
 $(document).ready(() => {
   $("#catFormFields").hide();
