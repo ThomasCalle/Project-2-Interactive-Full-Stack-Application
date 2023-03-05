@@ -13,13 +13,19 @@
 
             </div>
             <div id="eventData" class="col-8 ">
+              <form id="donutData">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="eventDescription" disabled>
                 <label for="eventDescription">Description</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="eventDueDate" disabled>
+                <input type="date" class="form-control" id="eventDueDate" disabled>
                 <label for="eventDueDate">Due Date</label>
+              </div>
+              <div class="form-floating mb-3">
+                <select type="date" class="form-control" id="eventCategory" disabled>
+                </select>
+                <label for="eventCategory">Category</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="eventPhase" disabled>
@@ -29,6 +35,7 @@
                 <input type="text" class="form-control" id="eventNextPhase" disabled>
                 <label for="eventNextPhase">Next Phase Change</label>
               </div>
+              </form>
             </div>
             <div id="thesholdData" class="col-5 ">
 
@@ -36,7 +43,8 @@
           </div>
       </div>
       <div class="modal-footer">
-
+          <button id="editEvent" type="button" class="btn btn-primary">Edit Event</button>
+          <button id="deleteEvent" type="button" class="btn btn-danger">Delete Event</button>
       </div>
     </div>
   </div>

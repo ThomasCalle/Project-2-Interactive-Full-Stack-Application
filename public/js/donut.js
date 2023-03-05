@@ -130,6 +130,7 @@ const renderEvent = async (event) => {
   $("#exampleModalLabel").html(event.name);
   $('#eventDescription').val(event.description);
   $('#eventDueDate').val(event.due_date);
+  $('#eventCategory').val(event.category.name);
 
   let phase = "";
   let nextPhase = "";
