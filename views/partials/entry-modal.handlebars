@@ -1,27 +1,8 @@
   <!-- Modal -->
-<!-- Logic for what we are doing -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Logic for what we are doing --> 
+<div class="modal fade" id="entryModal" tabindex="-1" aria-labelledby="entryModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-{{!-- Input for new Event --}}
-<div>
 
-<input type="text" name="name"><br>
-<input type="text" name="description"><br>
-<input type="date" name="dueDate"<br>
-<select type="category" name="category">
-    {{#each category}}
-    <option>{{category.name}}</option>
-    {{/each}}
-</select>
-
-</div>
-      </div>
-    </div>
-  </div>
-</div>
+{{> new-event}}
