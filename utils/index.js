@@ -48,7 +48,7 @@ module.exports = {
             let nowDate = dueDay - nowDay;
 
             // calculate timeFrame with t3 as outer field, divide by nine for unix duration of each threshold.
-            const bargraphLength = 9
+            const bargraphLength = 9;
             let timeFrame = t3;
             timeFrame = timeFrame / bargraphLength;
             // Add unix dates of thresholds back to array., along with threshold marker
