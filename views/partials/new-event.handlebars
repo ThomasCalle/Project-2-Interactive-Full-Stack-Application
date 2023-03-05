@@ -1,17 +1,40 @@
-{{!-- Input for new Event --}}
+<!-- Modal -->
+<div class="modal fade" id="entryModal" tabindex="-1" aria-labelledby="entryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
         <h1 class="modal-title fs-5" id="entryModalLabel">New Event</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="flex">
-        <form id="newEvent">
-          <label for="name" class="form-label">Event Name:</label><input type="text" name="name">
-          <label for="description" class="form-label">Event Description:</label><input type="text" name="description">
-          <label for="dueDate" class="form-label">Due Date:</label><input type="date" name="dueDate">
-          <label for="category" class="form-label">Category:</label><select id="cat-select" class="form-select" type="category" name="category"></select>
-        </form>
-          <button id="sub-new-event" type="button" class="btn btn-primary">Add New Event</button>
+        <div class="container-fluid">
+          <form id="newEvent" class="form d-flex">
+            <div class="col-12 flex">
+              <div class=" mb-4 mx-2">
+                <label for="name" class="form-label">Event Name:</label>
+                <input type="text" name="name" class="form-control">
+              </div>
+              <div class=" mb-4 mx-2">
+                <label for="description" class="form-label">Event Description:</label>
+                <input type="text" name="description" class="form-control">
+              </div>
+              <div class=" mb-4 mx-2">
+
+                <label for="dueDate" class="form-label">Due Date:</label>
+                <input type="date" name="due_date" class="form-control">
+              </div>
+              <div class=" mb-4 mx-2">
+                <label for="category" class="form-label">Category:</label>
+                <select id="cat-select" class="form-select" type="category" name="category"></select>
+              </div>
+            </div>  
+          </form>
         </div>
+        <div id="catFormFields">
+          {{> new-category}}
+        </div>
+        <button id="sub-new-event" type="button" class="btn btn-primary">Add New Event</button>
       </div>
     </div>
+  </div>
 </div>
