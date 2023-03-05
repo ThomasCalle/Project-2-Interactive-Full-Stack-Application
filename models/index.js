@@ -13,13 +13,23 @@ Category.hasMany(Event, {
 });
 
 Event.belongsTo(User, {
-  foreignKey: 'user_id'
-  // onDelete: 'CASCADE'
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
 });
 
 User.hasMany(Event, {
   foreignKey: 'user_id'
 });
+
+Category.belongsTo(User, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE'
+});
+
+User.hasMany(Category, {
+  foreignKey: 'user_id'
+});
+   
    
   
 module.exports = { User, Category, Event };
