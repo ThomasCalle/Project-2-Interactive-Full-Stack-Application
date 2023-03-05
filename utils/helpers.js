@@ -1,4 +1,4 @@
-const router = require('express').Router();
+
 module.exports = {
     format_date: (date) => {
       // Format date as MM/DD/YYYY
@@ -20,8 +20,8 @@ module.exports = {
         return `<span for="img" aria-label="gear">⚙️</span>`;
       }
     },
-    // check_means: (window.means) {
-      
-    // }
+    // check_cat: () => {
+    //   return this.ariaPressed;
+    // },
   };
   
