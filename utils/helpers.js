@@ -20,5 +20,6 @@ module.exports = {
         return `<span for="img" aria-label="gear">⚙️</span>`;
       }
     }
+
   };
   

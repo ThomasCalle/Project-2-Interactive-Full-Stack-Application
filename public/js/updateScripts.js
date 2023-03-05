@@ -1,6 +1,5 @@
 const subNewBtn = document.getElementById("sub-new-event");
 const subNewForm = document.getElementById("newEvent");
-const addNewCat = document.getElementById("add-new-cat");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
 // Arrays for cascading dropdown (didn't end up working in time)
@@ -67,8 +66,8 @@ async function catPost() {
 
   var catBody =
   {
-    "name": catData.name,
-    "type": catData.type,
+    "name": catData.catName,
+    "type": catData.catType,
     "t1": catData.t1int + " " + catData.t1dur,
     "t2": catData.t2int + " " + catData.t2dur,
     "t3": catData.t3int + " " + catData.t3dur
@@ -119,12 +118,11 @@ async function catPost() {
 // event listener for new Event.
 subNewBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log(addNewCat.ariaPressed);
-  if (addNewCat.ariaPressed === 'true') {
+  if ($("#cat-select").val() === "0") {
     catPost();
     return;
 
-  } else if (addNewCat.ariaPressed === 'false') {
+  } else {
     var formData = {};
     var form = new FormData(subNewForm);
     form.forEach((value, key) => (formData[key] = value));
