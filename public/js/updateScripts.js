@@ -41,12 +41,12 @@ subNewBtn.addEventListener('click', catFetcher());
 
 
 $("#deleteEvent").on('click', async (event) => {
-  const deletedEvent = await fetch(`/api/events/${ event.target.dataset.id}`, {
-      method: "DELETE",
-      headers: { 'Content-Type': 'application/json' },
-    });
-    document.location.replace('/');
-  }
+  const deletedEvent = await fetch(`/api/events/${event.target.dataset.id}`, {
+    method: "DELETE",
+    headers: { 'Content-Type': 'application/json' },
+  });
+  document.location.replace('/');
+}
 )
 
 
@@ -106,53 +106,53 @@ subNewBtn.addEventListener("click", async (event) => {
   if ($("#cat-select").val() === "0") {
     newCategory = await catPost();
 
-  } 
-    var formData = {};
-    var form = new FormData(subNewForm);
-    form.forEach((value, key) => (formData[key] = value));
-    console.log(formData)
-    var formBody = {
-      "name": formData.name,
-      "description": formData.description,
-      "due_date": formData.due_date,
-      "location": "",
-      "category_id": newCategory.id ? newCategory.id : formData.category,
-      // "user_id": req.session.id
-    }
-    formBody = JSON.stringify(formBody);
-    let API = "/api/events/"
-    let METHOD = "POST"
-    if ($('input[name="id"]').val().trim() !== "") {
-      API += $('input[name="id"]').val().trim();
-      METHOD="PUT"
-    }
-    fetch(API, {
-      method: METHOD,
-      mode: 'cors',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: formBody
-    })
-    resetFields();
-    document.location.reload();
-  
+  }
+  var formData = {};
+  var form = new FormData(subNewForm);
+  form.forEach((value, key) => (formData[key] = value));
+  console.log(formData)
+  var formBody = {
+    "name": formData.name,
+    "description": formData.description,
+    "due_date": formData.due_date,
+    "location": "",
+    "category_id": newCategory.id ? newCategory.id : formData.category,
+    // "user_id": req.session.id
+  }
+  formBody = JSON.stringify(formBody);
+  let API = "/api/events/"
+  let METHOD = "POST"
+  if ($('input[name="id"]').val().trim() !== "") {
+    API += $('input[name="id"]').val().trim();
+    METHOD = "PUT"
+  }
+  fetch(API, {
+    method: METHOD,
+    mode: 'cors',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: formBody
+  })
+  resetFields();
+  document.location.reload();
+
 });
 
 function categorySelects() {
   for (let i = 0; i < 3; i++) {
     let j = i + 1
     const catNums = document.getElementById(`t${j}`);
-    catNums.innerHTML = 
-    `<div class="input-group mb-2">
+    catNums.innerHTML =
+      `<div class="input-group mb-2">
     <span for="threshold${j}" class="input-group-text">Threshold ${j}:</span>
     <input type="text" name="t${j}int" class="form-control">
     <select name="t${j}dur" class="form-select">
     <option value="day">days</option>
     <option value="week" selected="selected">weeks</option>
     <option value="month">months</option>
-    </select>`    
+    </select>`
   }
 };
 
@@ -165,8 +165,8 @@ const resetFields = () => {
 
 }
 
-$("#closeBtnFooter").click(() => { resetFields()});
-$("#closeBtnHeader").click(() => { resetFields()});
+$("#closeBtnFooter").click(() => { resetFields() });
+$("#closeBtnHeader").click(() => { resetFields() });
 
 
 $("#editEvent").click(async (event) => {
@@ -174,15 +174,15 @@ $("#editEvent").click(async (event) => {
   event.stopPropagation();
 
   let eventData = await fetch(`/event/${event.target.dataset.id}`, {
-      method: "GET", 
-      headers: { 'Content-Type': 'application/json' },
+    method: "GET",
+    headers: { 'Content-Type': 'application/json' },
   });
   eventData = await eventData.json();
-
+  $('#entryModalLabel').html('Edit Event');
   $('input[name="id"]').val(eventData.id);
   $('input[name="name"]').val(eventData.name);
   $('input[name="description"]').val(eventData.description);
   $('input[name="due_date"]').val(eventData.due_date);
-  $(`select[name="category"] option[value=${eventData.category.id}]`).attr('selected','selected');
+  $(`select[name="category"] option[value=${eventData.category.id}]`).attr('selected', 'selected');
 
 });

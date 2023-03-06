@@ -45,7 +45,7 @@ module.exports = {
             const total = t1+t2+t3;
 
 
-            let nowDate = dueDay - nowDay;
+            let nowDate = Math.max((dueDay - nowDay),0);
 
             // calculate timeFrame with t3 as outer field, divide by nine for unix duration of each threshold.
             const bargraphLength = 9;
