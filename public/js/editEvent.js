@@ -13,5 +13,5 @@ $("#editEvent").click(async (event) => {
     $('input[name="description"]').val(eventData.description);
     $('input[name="due_date"]').val(eventData.due_date);
     $(`select[name="category"] option[value=${eventData.category.id}]`).attr('selected','selected');
-
+    
 });
