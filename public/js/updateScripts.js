@@ -19,6 +19,8 @@ const manageEvent = document.getElementById("buttons");
 
 // };
 
+$("#update-modal-btn-event").click(() => {  $('#entryModalLabel').html('New Event');});
+
 async function catFetcher(catList) {
   const catFetch = await fetch('/category/', {
     method: "GET",
@@ -101,6 +103,7 @@ async function catPost() {
 
 // event listener for new Event.
 subNewBtn.addEventListener("click", async (event) => {
+
   let newCategory = {};
   event.preventDefault();
   if ($("#cat-select").val() === "0") {

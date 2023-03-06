@@ -306,7 +306,7 @@ label {
 
 #contact-form input[type="text"],
 #contact-form input[type="email"],
-#contact-form input textarea {
+#contact-form textarea {
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
