@@ -1,8 +1,9 @@
 const { User, Category, Event } = require('../models');
 const sequelize = require('sequelize');
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const userData = await User.findAll({
             attributes:['id', 'name', 'description', 'due_date'],
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
                 attributes: ['name', 'type', 'T1', 'T2', 'T3']
             }]
         });
-        res.render('homepage', eventData);
+        res.render('homepage', userData);
     } catch (err) {
         res.render('login');
     }

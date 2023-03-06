@@ -13,7 +13,8 @@ const loginPageFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      document.location.reload();
     } else {
       const data = await response.json();
 
@@ -66,7 +67,8 @@ const registerPageFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      document.location.reload();
     } else {
       const data = await response.json();
 

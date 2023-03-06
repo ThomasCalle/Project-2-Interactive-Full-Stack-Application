@@ -1,7 +1,7 @@
-// const catListSel = document.getElementById("catList");
+const catListSel = document.getElementById("catList");
 
 // function onLoad() {
-//   catListicle();
+// //   catListicle();
 //   userDetailicles();
 // }
 
@@ -19,15 +19,14 @@
 //     catListSel.value = "";
 //   };
 
-// async function userDetailicles() {
-//   const userFetch = await fetch('/user/' + req.session.userId, {
-//     method: "GET",
-//     headers: { 'Content-Type': 'application/json' 
-//   },
-//   })
-//     userData = await userFetch.json();
+async function userDetailicles() {
+  const userFetch = await fetch('/user/' + req.session.userId, {
+    method: "GET",
+    // headers: { "Content-Type": "application/json" },
+  })
+  userData = await userFetch.json();
+  console.log(userData);
 
-
-// }
-
+}
+userDetailicles();
 // onLoad();

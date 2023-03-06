@@ -14,7 +14,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      document.location.reload();
     } else {
       const data = await response.json();
 
@@ -67,7 +68,8 @@ const registerFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      // document.location.replace('/');
+      document.location.reload();
     } else {
       const data = await response.json();
 

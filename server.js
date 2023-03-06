@@ -26,6 +26,7 @@ const sess = {
     httpOnly: true,
     secure: false,
     sameSite: 'strict',
+    path:'/'
   },
   resave: false,
   saveUninitialized: true,

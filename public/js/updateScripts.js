@@ -3,6 +3,7 @@ const subNewForm = document.getElementById("newEvent");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
 const manageEvent = document.getElementById("buttons");
+const editEvent = document.getElementById("editEvent");
 // Arrays for cascading dropdown (didn't end up working in time)
 
 // var months = [];
@@ -37,8 +38,6 @@ async function catFetcher(catList) {
 
 
 //event listener for modal
-subNewBtn.addEventListener('click', catFetcher());
-
 
 manageEvent.addEventListener('click', async (event) => {
   console.log(event.target.dataset.id)
@@ -55,6 +54,11 @@ manageEvent.addEventListener('click', async (event) => {
     })
     var eventData = await eventFetch.json();
     console.log(eventData)
+    $('input[name="id"]').val(eventData.id);
+    $('input[name="name"]').val(eventData.name);
+    $('input[name="description"]').val(eventData.description);
+    $('input[name="due_date"]').val(eventData.due_date);
+    $(`select[name="category"] option[value=${eventData.category.id}]`).attr('selected','selected');
     
   }
 })
@@ -74,13 +78,6 @@ const toggleCategoryForm = () => {
 }
 
 $("#cat-select").change(toggleCategoryForm);
-
-
-// $(addNewCat).on('click', (event) => {})
-
-// $(document.getElementById(t1-dur)).on('change', () => {
-
-// })
 
 async function catPost() {
   var catData = {};
@@ -187,7 +184,4 @@ function categorySelects() {
   }
 };
 
-function whichPartial() {
-  document
-}
 
