@@ -101,9 +101,10 @@ async function catPost() {
 
 // event listener for new Event.
 subNewBtn.addEventListener("click", async (event) => {
+  let newCategory = {};
   event.preventDefault();
   if ($("#cat-select").val() === "0") {
-    var newCategory = await catPost();
+    newCategory = await catPost();
 
   } 
     var formData = {};
@@ -134,6 +135,7 @@ subNewBtn.addEventListener("click", async (event) => {
       },
       body: formBody
     })
+    resetFields();
     document.location.reload();
   
 });
