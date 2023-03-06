@@ -40,14 +40,13 @@ var bars = svg.selectAll(".bar")
   .data(data)
   .enter().append("rect")
   .attr("fill", function (d) {
-    if (dayjs().isBefore(dayjs(d.t3Date))) {
+    if (d.nowTime > 6) {
       return '#33a532d9';
-    } else if (dayjs().isBefore(dayjs(d.t2Date))) {
-      return "33a532d9";
-    } else if (dayjs().isBefore(dayjs(d.t1Date))) {
+    } else if (d.nowTime > 3) {
       return "#F7B500d9";
+    } else if (d.nowTime ) {
+      return "#BB1E10d9";
     }
-    return "#BB1E10d9";
   })
   .attr("class", "bar")
   //.attr("width", function (d) { return x(d[topicscore]); })
@@ -77,7 +76,7 @@ svg.append("g")
 svg.selectAll("rect")
   .transition()
   .duration(800)
-  .attr("width", function (d) { return x(d.progress); })
+  .attr("width", function (d) { return x(d.nowTime); })
   .delay(function (d, i) { return (i * 100) });
 
 
