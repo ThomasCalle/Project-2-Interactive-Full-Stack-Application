@@ -105,8 +105,8 @@ const renderPie = (event) => {
     .data(keys)
     .enter()
     .append("circle")
-    .attr("cx", function (d, i) { return 10 + i * 100 })
-    .attr("cy", function (d, i) { return 225 }) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("cx", function (d, i) { return 10 })
+    .attr("cy", function (d, i) { return 225 + i * 30  }) 
     .attr("r", 7)
     .style("fill", function (d, i) { return colours[i] })
 
@@ -117,8 +117,8 @@ const renderPie = (event) => {
     .data(keys)
     .enter()
     .append("text")
-    .attr("x", function (d, i) { return 30 + i * 100 })
-    .attr("y", function (d, i) { return 225 })
+    .attr("x", function (d, i) { return 30  })
+    .attr("y", function (d, i) { return 225 + i * 30})
     .style("fill", "black")
     .text(function (d) { return d })
     .attr("text-anchor", "left")
