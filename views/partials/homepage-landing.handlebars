@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="/LP.assets/LP.css/LP.css" />
         <script src="https://kit.fontawesome.com/cd4d674acb.js" crossorigin="anonymous"></script>
-        <title>AccessCal| Full-Stack Application</title>
+        <title>AccessCal | Full-Stack Application</title>
     </head>
     <!-- Interactive Social Media Buttons - Baackup-->
     <body>
@@ -35,18 +35,30 @@
         </header>
         <!-- Title name of my portfolio -->
             <h1>AccessCal</h1>
-              <img src="/LP.assets/LP.image/AccessCal.png" width="390.28" height="585.14" class="avatar" alt="AccessCal Logo"/>
-            <section id="about"class="container center" >
+            <article class="card-column">
+                    <figure class="card code-card">
+                        <h2 class="card-header">AccessCal</h2>
+                        <aside class="card-body">
+                            <p></p>
+                        </aside>
+                        <pre class="code-block">
+                            <a href="https://github.com/ThomasCalle" 
+                            target="_blank"><img src="/LP.assets/LP.image/AccessCal.jpg" width="640" height="600" alt="AccessCal selling page."></a>
+                        </pre>
+                    </figure>
+                </article>
+
+              {{!-- <img src="/LP.assets/LP.image/AccessCal.png" width="800" height="600" class="avatar" alt="AccessCal Logo"/>
+            <section id="about"class="container center" > --}}
               <h2>About</h2>
               <p>
                 Welcome to AccessCal our Interactive Full-Stack Application developed for those with Attention-Deficit/Hyperactivity Disorder(ADHD). The application provides a comprehensive suite of tools tailored to those with (ADHD)
                 allowing the subject to intergrate a visual event tracker tailored their personal devices in order to meet the subjects needs.
                 AccessCal offers a streamlined and intuitive user interface, allowing users to effectively manage their own visual event tracker.
-
               </p>
                 <br>
               <p>
-                ISERT USER STORY IF NEEDED OR ANY OTHER TEXT
+                INSERT USER STORY IF NEEDED OR ANY OTHER TEXT
               </p>
             </section>
         <!-- FLEX BOX ROW BODY FOR TEAM RESUME AKA. 'TEAM ABOUT ME' SECTION-->
@@ -56,7 +68,7 @@
                     <figure class="card code-card">
                         <h2 class="card-header">Steve Cardie</h2>
                         <aside class="card-body">
-                            <p>Lead.</p>
+                            <p>Lead BackEnd Dev.</p>
                         </aside>
                         <pre class="code-block">
                           <a href="https://github.com/omgthegreenranger" target="_blank"><img src="/LP.assets/LP.image/Steve Cardie.jpg" width="340" height="400" alt="photo of Steve Cardie."></a>
@@ -72,7 +84,7 @@
                         </aside>
                         <pre class="code-block">
                             <a href="https://github.com/ThomasCalle" 
-                            target="_blank"><img src="/LP.assets/LP.image/thomas-retrowave-2.JPEG" width="340" height="400" alt="photo of Thomas Calle."></a>
+                            target="_blank"><img src="/LP.assets/LP.image/PortfolioHeadshot.jpg" width="340" height="470" alt="photo of Thomas Calle."></a>
                         </pre>
                     </figure>
                 </article>
@@ -81,7 +93,7 @@
                     <figure class="card code-card">
                         <h2 class="card-header">Stefan Marinov</h2>
                         <aside class="card-body">
-                            <p>Lead.
+                            <p>Lead Graph Master
                             </p>
                         </aside>
                         <pre class="code-block">
@@ -109,12 +121,15 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message"></textarea><br /><br />
 
-                    <input type="submit" value="Submit" />
+                    <button type="submit" style="border: none;" action="/send-email" >
+                        <a>Click me </a>
+                    </button>
+                    {{!-- <input type="submit" value="Submit" /> --}}
                 </form>
                 <section class="contactinfo">
                   <br>
                   <p>Phone: (416)JOE-BLOW</p>
-                  <p>Email: joe.blow@outlook.com</p>
+                  <p>Email: @outlook.com</p>
                 </section>
             </section>
         </section>

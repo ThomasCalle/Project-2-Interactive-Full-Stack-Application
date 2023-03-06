@@ -23,7 +23,6 @@ var putId = '';
 
 // };
 
-
 //event listener for modal
 addNewBtn.addEventListener('click', async (event) => {
   document.getElementById('entryModalLabel').innerHTML = "New Event";
@@ -62,8 +61,9 @@ manageEvent.addEventListener('click', async (event) => {
     
     postOrPut = "PUT";
     putId = event.target.dataset.id;
+
   }
-})
+)
 
 
 async function catFetcher(eventId) {
@@ -120,6 +120,7 @@ async function catPost() {
   catBody = JSON.stringify(catBody);
   await fetch('/api/categories', {
     method: "POST",
+
     mode: 'cors',
     headers: {
       'Accept': 'application/json',
@@ -163,6 +164,7 @@ async function catPost() {
 
 async function eventPost() {
   var formData = {};
+
     var form = new FormData(subNewForm);
     form.forEach((value, key) => (formData[key] = value));
     console.log(formData)
@@ -171,7 +173,7 @@ async function eventPost() {
       "description": formData.description,
       "due_date": formData.due_date,
       "location": "",
-      "category_id": formData.category,
+      "category_id": newCategory.id ? newCategory.id : formData.category,
       // "user_id": req.session.id
     }
     console.log(formData.id);
@@ -198,6 +200,7 @@ subNewBtn.addEventListener("click", (event) => {
   } else {
     eventPost();
   }
+
 });
 
 function categorySelects() {
@@ -216,3 +219,33 @@ function categorySelects() {
   }
 };
 
+const resetFields = () => {
+  $('input[name="id"]').val('');
+  $('input[name="name"]').val('');
+  $('input[name="description"]').val('');
+  $('input[name="due_date"]').val('');
+  $(`select[name="category"]`).val('')
+
+}
+
+$("#closeBtnFooter").click(() => { resetFields()});
+$("#closeBtnHeader").click(() => { resetFields()});
+
+
+$("#editEvent").click(async (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+
+  let eventData = await fetch(`/event/${event.target.dataset.id}`, {
+      method: "GET", 
+      headers: { 'Content-Type': 'application/json' },
+  });
+  eventData = await eventData.json();
+
+  $('input[name="id"]').val(eventData.id);
+  $('input[name="name"]').val(eventData.name);
+  $('input[name="description"]').val(eventData.description);
+  $('input[name="due_date"]').val(eventData.due_date);
+  $(`select[name="category"] option[value=${eventData.category.id}]`).attr('selected','selected');
+
+});

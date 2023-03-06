@@ -7,13 +7,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <div class="row">
-            <div id="donutGraph" class="col-4">
-              <svg id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 250"></svg>
+        <div class="row">
+          <div id="donutGraph" class="col-4">
+            <svg id="chart" preserveAspectRatio="xMinYMin meet" viewBox="0 0 200 250"></svg>
 
-            </div>
-            <div id="eventData" class="col-8 ">
-              <form id="donutData">
+          </div>
+          <div id="eventData" class="col-8 ">
+            <form id="donutData">
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="eventDescription" disabled>
                 <label for="eventDescription">Description</label>
@@ -34,14 +34,18 @@
                 <input type="text" class="form-control" id="eventNextPhase" disabled>
                 <label for="eventNextPhase">Next Phase Change</label>
               </div>
-              </form>
-            </div>
-            <div id="thesholdData" class="col-5 ">
-
-            </div>
+            </form>
           </div>
+          <div id="thesholdData" class="col-5 ">
+
+          </div>
+        </div>
       </div>
       <div class="modal-footer" id="buttons">
+        <button id="editEvent" type="button" class="btn btn-primary" aria-label="Close" data-bs-toggle="modal"
+          data-bs-target="#entryModal" data-select="update-event">Edit Event</button>
+        <button id="deleteEvent" type="button" class="btn btn-danger">Delete Event</button>
+
       </div>
     </div>
   </div>
