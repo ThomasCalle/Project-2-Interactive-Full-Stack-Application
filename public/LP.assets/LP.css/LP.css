@@ -3,6 +3,10 @@
 html {
     font-size: 62%;
     scroll-behavior: smooth;
+    background-color:#33393f;
+}
+main {
+    /* font-size: 62%; */
 }
 
 /* SOCIAL MEDIA SECTION "social-icons" */
@@ -57,8 +61,26 @@ html {
     border-radius: 60px;
     align-items: center;
 
-
 }
+/* Header-Dom AccessCal */
+#header-dom {
+color:white;
+font-size: 70px;
+font-weight: 550;
+}
+
+/* Header-Mid AccessCal */
+#header-mid {
+color: white;
+font-weight: 550;
+}
+
+/* Header-Sub AccessCal */
+#header-sub {
+color:rgb(244, 44, 244);
+font-size: 60px
+}
+
 /* Body structure style */
 Body {
     font-family: Arial;
@@ -67,8 +89,29 @@ Body {
     flex-direction: column;
     min-height: 100vh;
     justify-content: flex-start;
-
+    
 }
+
+/* AccessCal Photo Logo */
+/* #pre-id{
+	width: 90rem;
+	margin: auto;
+    padding: 5px;
+}
+#figure-id {
+	width: 90rem;
+    padding: 5px;
+}
+#article-id {
+	width: 90rem;
+	margin: auto;
+    padding: 5px;
+} 
+#aside-id {
+    
+    padding: 5px;
+} */
+
 /* Photo backdrop on the header of the website page */
 .hero {
     height: 800px;
@@ -108,14 +151,14 @@ body {
 /* H1 to H6 header design and frame perfect for mobile format*/
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.625rem;
-    color: rgba(216, 24, 191, 0.867);
+    color: rgba(240, 79, 218, 0.915);
     font-weight: 700;
     line-height: 1.1;
     text-align: center;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 h2 {
@@ -138,7 +181,10 @@ h6 {
     font-size: 10px;
 }
 
-
+/* Resume Team Photos */
+#resume img {
+    width: 100%;
+}
 
 /* Resume container blocks - this is holding the blocks into the center of the page - otherwise the containers would be pushed out to the edge of the page */
 .container {
@@ -181,7 +227,7 @@ h6 {
     justify-content: flex-start;
     min-height: 100%;
     padding: 2rem;
-    color: rgb(189, 144, 106);
+    color:rgb(244, 44, 244);
     outline: 2px double #dbd4cb;
     outline-offset: -2px;
     transition: all 0.5s ease-in-out;
@@ -192,7 +238,7 @@ h6 {
     border: 2px solid #eae6e0;
     border-radius: 8px;
     background-color: #33393f;
-    color: rgb(189, 144, 106);
+    color: rgb(244, 44, 244);
     transition: all 0.5s ease-in-out;
     display: block;
     margin-left: auto;
@@ -205,7 +251,7 @@ h6 {
 /* Resume: card hover/glow effect turns on when mouse gloats */
 .code-card:hover,
 .code-card:hover .card-header {
-    box-shadow: inset 0px 0px 8px rgb(189, 144, 106), 0 0 15px rgb(189, 144, 106);
+    box-shadow: inset 0px 0px 8px rgb(244, 44, 244), 0 0 15px rgb(244, 44, 244);
 }
 
 /* Resume: block image radius: */
@@ -258,9 +304,9 @@ label {
     color: #33393f;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form input textarea {
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -271,17 +317,19 @@ textarea {
 
 input[type="submit"] {
     width: 20%;
-    background-color: #4caf50;
+    background-color:rgb(244, 44, 244);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #ff2374;
 }
 
 .contactinfo[class="contactinfo"]{

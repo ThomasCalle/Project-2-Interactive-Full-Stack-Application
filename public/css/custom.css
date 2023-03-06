@@ -87,64 +87,42 @@
   top: 0;
   left: 0;
 }
-
 #eventModal {
   --bs-modal-width: 50%;
 }
-
 #loginModal {
-  --bs-modal-width: 20%;
+  --bs-modal-width: 25%;
 }
-
-
-
 @media screen and (max-width: 998px) {
-
-   #eventModal {
+  #eventModal {
     --bs-modal-width: 62.5%;
   }
   #loginModal {
-    --bs-modal-width: 50%;
+    --bs-modal-width: 40%;
   }
 }
-
-  @media screen and (max-width: 768px) {
-    /* updates the styling of the top header container of the webpage */
-    .article-title {
-      height: 3rem;
-      margin-top: 13px;
-      font-size: 2rem;
-    }
-
-    .justified{
-      justify-content: center;
-     }
-
-     #eventModal {
-      --bs-modal-width: 75%;
-    }
-    #loginModal {
-      --bs-modal-width: 75%;
-    }
+@media screen and (max-width: 768px) {
+  /* updates the styling of the top header container of the webpage */
+  .justified {
+    justify-content: center;
   }
-
-  @media screen and (max-width: 501px) {
-    /* updates the styling of the top header container of the webpage */
-    .article-title {
-      height: 3rem;
-      margin-top: 13px;
-      font-size: 2rem;
-    }
-
-    .justified{
-      justify-content: center;
-     }
-
-     #eventModal {
-      --bs-modal-width: 100%;
-      flex-direction: column;
-    }
-    #loginModal {
-      --bs-modal-width: 100%;
-    }
+  #eventModal {
+    --bs-modal-width: 75%;
   }
+  #loginModal {
+    --bs-modal-width: 75%;
+  }
+}
+@media screen and (max-width: 498px) {
+  /* updates the styling of the top header container of the webpage */
+  .justified {
+    justify-content: center;
+  }
+  #eventModal {
+    --bs-modal-width: 100%;
+    flex-direction: column;
+  }
+  #loginModal {
+    --bs-modal-width: 100%;
+  }
+}

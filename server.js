@@ -67,9 +67,9 @@ app.get('/send-email', (req, res) => {
   const msg = {
     to: email,
     from: 'thomas.calle@outlook.com', // The verfied email for the sender
-    subject: 'Sending with SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    subject: 'AccessCal | Welcome to the community!',
+    text: 'Welcome newcomer, \n Our team appreciates you taking the time to reach out to us!',
+    html: '<strong>Welcome newcomer, \n Our team appreciates you taking the time to reach out to us!</strong>',
   };
   sgMail
     .send(msg)
@@ -89,9 +89,9 @@ app.post('/send-email', (req, res) => {
   const msg = {
     to: email, // Change to recipient
     from: 'thomas.calle@outlook.com', // Change to verified sender
-    subject: 'Sending with SendGrid is Fun',
-    text: 'and easy to do anywhere, even with Node.js',
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+    subject: 'AccessCal | Welcome to the community!',
+    text: 'Welcome newcomer, \n Our team appreciates you taking the time to reach out to us!',
+    html: '<strong>Welcome newcomer, \n Our team appreciates you taking the time to reach out to us!</strong>',
   }
   sgMail
     .send(msg)
