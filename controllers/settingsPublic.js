@@ -16,8 +16,8 @@ router.get('/', withAuth, async (req, res) => {
                 model: Event
             }]
         })
-        const setData = settingsData.map((setData) => setData.get({ plain: true }));
-        res.render('settings');
+        const setData = settingsData.get({ plain: true });
+        res.render('settings', {setData, loggedIn: req.session.loggedIn, userId: req.session.userId, firstName: req.session.firstName});
     } catch (err) {
         res.status(500)
     }
