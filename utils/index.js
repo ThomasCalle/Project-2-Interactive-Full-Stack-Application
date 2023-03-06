@@ -46,11 +46,19 @@ module.exports = {
 
 
             let nowDate = dueDay - nowDay;
-
+            
             // calculate timeFrame with t3 as outer field, divide by nine for unix duration of each threshold.
             const bargraphLength = 9;
             let timeFrame = t3;
             timeFrame = timeFrame / bargraphLength;
+            nowDate = nowDate / timeFrame;
+            if(nowDate < 0) {
+                nowTime = 0;
+            }
+            if(nowDate > 9) {
+                nowTime = 9;
+            }
+
             // Add unix dates of thresholds back to array., along with threshold marker
             eventData[i].t1Date = t1date;
             eventData[i].t2Date = t2date;
@@ -58,7 +66,7 @@ module.exports = {
             eventData[i].t1pct = t1 / total * bargraphLength;
             eventData[i].t2pct = t2 / total * bargraphLength;
             eventData[i].t3pct = t3 / total * bargraphLength;
-            eventData[i].nowTime = Math.min((nowDate / timeFrame), 9);
+            eventData[i].nowTime = nowTime;
             eventData[i].progress = Math.max((dayjs().unix() - t3date) / (t3), 0) * bargraphLength;
 
         }

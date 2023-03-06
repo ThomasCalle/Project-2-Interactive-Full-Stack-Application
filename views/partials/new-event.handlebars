@@ -8,31 +8,25 @@
       </div>
       <div class="modal-body">
         <div class="container-fluid">
-          <form id="newEvent" class="form d-flex">
-            <div class="col-12 flex">
-              <div class=" mb-4 mx-2">
-                <label for="id" class="form-label">Event ID:</label>
-                <input type="text" name="id" class="form-control">
+        <form id="newEvent" class="form d-flex">
+         <div class="col-12 flex">
+          <div class="mb-4 mx-2">
+          <label for="name" class="form-label">Event Name:</label><input id="catName" type="text" name="name">
+          </div>
+          <div class=" mb-4 mx-2">
+          <label for="description" class="form-label">Event Description:</label><input id="catDesc" type="text" name="description">
               </div>
               <div class=" mb-4 mx-2">
-                <label for="name" class="form-label">Event Name:</label>
-                <input type="text" name="name" class="form-control">
-              </div>
+          <label for="dueDate" class="form-label">Due Date:</label><input id="catDD" type="date" name="dueDate">
+           </div>
+           <div class=" mb-4 mx-2">          
+          <label for="category" class="form-label">Category:</label><select id="cat-select" class="form-select" type="category" name="category"></select>
+                        </div>
               <div class=" mb-4 mx-2">
-                <label for="description" class="form-label">Event Description:</label>
-                <input type="text" name="description" class="form-control">
-              </div>
-              <div class=" mb-4 mx-2">
+        </form>
+          <button id="sub-new-event" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Add New Event</button>
+          </div>
 
-                <label for="dueDate" class="form-label">Due Date:</label>
-                <input type="date" name="due_date" class="form-control">
-              </div>
-              <div class=" mb-4 mx-2">
-                <label for="category" class="form-label">Category:</label>
-                <select id="cat-select" class="form-select" type="category" name="category"></select>
-              </div>
-            </div>
-          </form>
         </div>
         <div id="catFormFields">
           {{> new-category}}

@@ -11,18 +11,40 @@ const withAuth = require('../../utils/auth');
 //  - associate category table with each event
 //  - use helper to calculate T1, T2, T3 in to API
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
+    try {
+        console.log(req.body.id);
+        const eventData = await Event.create({
+            name: req.body.name,
+            description: req.body.description,
+            due_date: req.body.due_date,
+            location: "",
+            category_id: req.body.category_id,
+            user_id: req.session.userId,
+        });
+        res.send(eventData)
+      } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }
+    });
+
+router.put('/:id', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.create({
+    const eventUpdate = await Event.update({
+    body: {
       name: req.body.name,
       description: req.body.description,
       due_date: req.body.due_date,
       location: "",
       category_id: req.body.category_id,
-      user_id: req.session.userId
-    });
-    eventData = eventData.get({plain: true});
-    res.send(eventData)
+      user_id: req.session.userId,
+      },
+    where: {
+      id: req.params.id,
+    }
+    })
+    res.send(eventUpdate)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
