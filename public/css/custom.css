@@ -1,10 +1,11 @@
 .float-left {
-  float: left !important;
+  float: left!important;
 }
 
 .float-right {
-  float: right !important;
+  float: right!important;
 }
+
 
 .icons i {
   margin-left: 15px;
@@ -13,68 +14,115 @@
   cursor: pointer;
 }
 
-.justified {
-  justify-content: space-between;
+.article-textarea,
+.article-title {
+  color: #000000;
+  width: 100%;
+  outline: none;
+  border:none;
+}
+
+.article-textarea {
+  resize: none;
+  height: calc(100% - 63px);
+  padding-top: 15px;
+}
+/* updated height to 4.5rem (font-size * 1.5) to ensure tops of bottoms of words are not cut off */
+.article-title {
+  height: 4.5rem;
+  margin-top: 13px;
+  font-size: 3rem;
+}
+
+.list-container .card {
+  height: calc(100vh - 70px);
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.list-container {
+  padding-left: 0;
+}
+
+.list-container .list-group,
+.list-container .list-group-item:first-child,
+.list-container .card {
+  border-top: none;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.list-item-title {
+  display: inline-block;
+  width: 100%;
+}
+
+.list-container i {
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.list-container .list-group-item {
+  border-left: none;
+  border-right: none;
+  padding: 20px;
+
+}
+.justified{
+justify-content:space-between;
 }
 
 .svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
+display: inline-block;
+position: relative;
+width: 100%;
 
-  vertical-align: top;
-  overflow: hidden;
+vertical-align: top;
+overflow: hidden;
 }
 .svg-content {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
+display: inline-block;
+position: absolute;
+top: 0;
+left: 0;
 }
-
 #eventModal {
-  --bs-modal-width: 50%;
+--bs-modal-width: 50%;
 }
-
 #loginModal {
-  --bs-modal-width: 25%;
+--bs-modal-width: 25%;
 }
-
 @media screen and (max-width: 998px) {
-  #eventModal {
-    --bs-modal-width: 62.5%;
-  }
-  #loginModal {
-    --bs-modal-width: 40%;
-  }
+#eventModal {
+  --bs-modal-width: 62.5%;
 }
-
+#loginModal {
+  --bs-modal-width: 40%;
+}
+}
 @media screen and (max-width: 768px) {
-  /* updates the styling of the top header container of the webpage */
-  .justified {
-    justify-content: center;
-  }
-
-  #eventModal {
-    --bs-modal-width: 75%;
-  }
-  #loginModal {
-    --bs-modal-width: 75%;
-  }
+/* updates the styling of the top header container of the webpage */
+.justified {
+  justify-content: center;
 }
-
+#eventModal {
+  --bs-modal-width: 75%;
+}
+#loginModal {
+  --bs-modal-width: 75%;
+}
+}
 @media screen and (max-width: 498px) {
-  /* updates the styling of the top header container of the webpage */
-
-  .justified {
-    justify-content: center;
-  }
-
-  #eventModal {
-    --bs-modal-width: 100%;
-    flex-direction: column;
-  }
-  #loginModal {
-    --bs-modal-width: 100%;
-  }
+/* updates the styling of the top header container of the webpage */
+.justified {
+  justify-content: center;
+}
+#eventModal {
+  --bs-modal-width: 100%;
+  flex-direction: column;
+}
+#loginModal {
+  --bs-modal-width: 100%;
+}
 }
