@@ -36,30 +36,18 @@ async function catFetcher(catList) {
 
 
 
-
 //event listener for modal
 subNewBtn.addEventListener('click', catFetcher());
 
-// editEvent.addEventListener('click', () => { });
 
-manageEvent.addEventListener('click', async (event) => {
-  console.log(event.target.dataset.id)
-  const delId = event.target.dataset.id;
-  if(event.target.id == "deleteEvent") {
-    fetch('/api/events/' + delId, {
-      method: "DELETE"
-    }).then(res => res.text())
-    .then(res => console.log(res))
-  } else if (event.target.id == "editEvent") {
-    const eventFetch = await fetch(`/event/${event.target.dataset.id}`, {
-      method: "GET",
+$("#deleteEvent").on('click', async (event) => {
+  const deletedEvent = await fetch(`/api/events/${ event.target.dataset.id}`, {
+      method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
-    })
-    var eventData = await eventFetch.json();
-    console.log(eventData)
-    
+    });
+    document.location.replace('/');
   }
-})
+)
 
 
 $(document).ready(() => {
@@ -98,7 +86,7 @@ async function catPost() {
     "t3": catData.t3int + " " + catData.t3dur
   }
   catBody = JSON.stringify(catBody);
-  await fetch('/api/categories', {
+  const newCategory = await fetch('/api/categories', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -106,48 +94,18 @@ async function catPost() {
       'Content-Type': 'application/json',
     },
     body: catBody
-  })
-    .then((data) => data.json())
-    .then(catData => {
-
-      return catData
-    })
-    .then(catData => {
-
-      var formData = {};
-      var form = new FormData(subNewForm);
-      form.forEach((value, key) => (formData[key] = value));
-
-      var formBody = {
-        "name": formData.name,
-        "description": formData.description,
-        "due_date": formData.due_date,
-        "location": "",
-        "category_id": catData.id,
-        // "user_id": req.session.id
-      }
-      formBody = JSON.stringify(formBody);
-      console.log(formBody)
-      fetch('/api/events/', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: formBody,
-      })
-    })
+  });
+  const categoryData = await newCategory.json();
+  return categoryData;
 }
 
 // event listener for new Event.
-subNewBtn.addEventListener("click", (event) => {
+subNewBtn.addEventListener("click", async (event) => {
   event.preventDefault();
   if ($("#cat-select").val() === "0") {
-    catPost();
-    return;
+    var newCategory = await catPost();
 
-  } else {
+  } 
     var formData = {};
     var form = new FormData(subNewForm);
     form.forEach((value, key) => (formData[key] = value));
@@ -157,12 +115,18 @@ subNewBtn.addEventListener("click", (event) => {
       "description": formData.description,
       "due_date": formData.due_date,
       "location": "",
-      "category_id": formData.category,
+      "category_id": newCategory.id ? newCategory.id : formData.category,
       // "user_id": req.session.id
     }
     formBody = JSON.stringify(formBody);
-    fetch('/api/events/', {
-      method: 'POST',
+    let API = "/api/events/"
+    let METHOD = "POST"
+    if ($('input[name="id"]').val().trim() !== "") {
+      API += $('input[name="id"]').val().trim();
+      METHOD="PUT"
+    }
+    fetch(API, {
+      method: METHOD,
       mode: 'cors',
       headers: {
         'Accept': 'application/json',
@@ -170,7 +134,8 @@ subNewBtn.addEventListener("click", (event) => {
       },
       body: formBody
     })
-  }
+    document.location.reload();
+  
 });
 
 function categorySelects() {
@@ -188,4 +153,8 @@ function categorySelects() {
     </select>`    
   }
 };
+
+function whichPartial() {
+  document
+}
 

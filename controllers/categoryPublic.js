@@ -11,8 +11,6 @@ router.get('/', withAuth, async (req, res) => {
                 user_id: req.session.userId
             }
         });
-        // res.render('homepage', categoryData);
-        // const catList = await categoryData.json;
         const catData = categoryData.map((catData) => catData.get({ plain: true }));
         res.json(catData);
     } catch (err) {

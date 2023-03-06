@@ -10,6 +10,7 @@
         <div class="container-fluid">
           <form id="newEvent" class="form d-flex">
             <div class="col-12 flex">
+              <input type="input" name="id" class="form-control">
               <div class=" mb-4 mx-2">
                 <label for="name" class="form-label">Event Name:</label>
                 <input type="text" name="name" class="form-control">
@@ -27,13 +28,14 @@
                 <label for="category" class="form-label">Category:</label>
                 <select id="cat-select" class="form-select" type="category" name="category"></select>
               </div>
-            </div>  
+            </div>
           </form>
         </div>
         <div id="catFormFields">
           {{> new-category}}
         </div>
-        <button id="sub-new-event" type="button" class="btn btn-primary">Add New Event</button>
+        <button id="sub-new-event" type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
