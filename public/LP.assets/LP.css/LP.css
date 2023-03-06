@@ -73,7 +73,7 @@ Body {
     height: 800px;
     width: 100%;
     margin-bottom: 25px;
-    background-image: url(../image/steinar-engeland-UtEUUNHvMLs-unsplash.jpg);
+    background-color: black;
     background-size: cover;
     background-position: center;
 }
