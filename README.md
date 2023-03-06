@@ -3,8 +3,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 ## Description:
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+Welcome to AccessCal our Interactive Full-Stack Application developed for those with Attention-Deficit/Hyperactivity Disorder(ADHD). The application provides a comprehensive suite of tools tailored to those with time-blindness to visualise their calendar and how each event tracks to the deadline. The user can create various event and associate various various thresholds (i.e. reminders) that will help them visualise the criticality of each event. 
+
+
+The application is device-friedly allowing the user to intergrate a visual event tracker tailored their personal devices in order to meet the subjects needs. 
+
+AccessCal offers a streamlined and intuitive user interface, allowing users to effectively manage their own visual event tracker. 
 
 ## Table of Contents:
 - [Overview](#Overview)
@@ -31,74 +35,38 @@ THEN I am given the ability to set a category to define alert threshold periods
 WHEN I click on the event
 THEN I am given a calendar and the ability to add task events related to the event.
 
-## User Story
 
-```md
-AS A person with the neurodevelopmental disorder (ADHD)
-I WANT a visual tracker that will add important events and details
-I WANT an application that will countdown the days to the event
-I WANT a minimal and clean ui/ux that stores my data 
-SO THAT I can manage my time effectively
-```
-
-## Acceptance Criteria
-
-```md
-GIVEN I 
-WHEN I 
-THEN 
-WHEN I 
-THEN I 
-WHEN I 
-THEN 
-WHEN I 
-THEN I 
-WHEN 
-THEN 
-WHEN I 
-THEN 
-```
 
 ## Usage Instructions
-1. Open the application at the beginning of your day - enter scheduled events,goals or reminders into the planner to keep tracked.
-2. Scroll to see ongoing timeblocks for the current day.
-3. Click on the timeblocks to enter events and edit details.
-4. Click the save button.
-5. Refresh the page to see the changes.
-6. Events not saved in timeblocks upon refresh won't be tracked locally.
+1. Open the application
+2. Log in or create an account
+3. Enter new events in your calendar
+4. View events along the bar graphs
+    1. click on the bar graph to show info about the event
+    
 
 ## Solution URL:
-[Solution URL Link:]()
+[Solution URL Link:](http://access-cal.herokuapp.com/)
 
 ## YouTube Walkthrough Video:
-[Click Here to Watch](https://www.youtube.com/watch?v=sm6py49QNto)
+no video walkthrough required
 
 ## Screenshots:
-### Figure 1. Screenshot
+### Figure 1. The calendar visual
+![Calendar](./assets/images/AC-01-Calendar.png)
 
-***NOTE: This is a demonstration example of 4K Screenshot. NOT USED FOR FINALL.***
-![](./public/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png/assets/images/Third-Paarty%20API's%20Work%20Day%20Scheduler.png) 
-### Figure .2 GIF
-The following animation demonstrates the application functionality:
 
-***NOTE: This is a demonstration example of 4K GIF. NOT USED FOR FINAL.***
-![ENTER brief decription of GIF.](./public/assets/images/gif.GIF)
+### Figure .2 The event visual
+![Event](./assets/images/AC-01-Calendar.png)
 
 
 ## Installation Process
 1. Clone the Repository from GitHub 
 2. (or) Download Zip Folder from Repository from GitHub 
 
-## Built With
-- Saiyan Pride
-- License Badge: [Shields.io](https://shields.io/)
-- Visual Studio Code: [Website](https://code.visualstudio.com/)
 
-## What I Learned
-
-
-### Continued Development:
-1. 
+## Continued Development:
+1. Establishing a Profile and Settings page where the user can enter their preferences
 2.  
 3.  
 
