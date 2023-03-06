@@ -1,10 +1,14 @@
 /* Begining of CSS document enjoy!*/
 
 html {
-    font-size: 62%;
+  /*  */
     scroll-behavior: smooth;
 }
 
+
+main {
+    font-size: 62%;
+}
 /* SOCIAL MEDIA SECTION "social-icons" */
 .social-icons-wrapper {
     margin-top: 5rem;
@@ -165,6 +169,14 @@ h6 {
     justify-content: center;
 }
 
+#resume .card-column {
+    width: 30%;
+}
+
+#resume img {
+    width: 100%;
+}
+
 
 /* Mobile: formated card-column */
 .card-column {
@@ -258,9 +270,9 @@ label {
     color: #33393f;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
     width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -269,8 +281,8 @@ textarea {
     border-radius: 4px;
 }
 
-input[type="submit"] {
-    width: 20%;
+#contact button[type="submit"] {
+    width: 80%;
     background-color: #4caf50;
     color: white;
     padding: 14px 20px;
@@ -280,7 +292,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+#contact button[type="submit"]:hover {
     background-color: #45a049;
 }
 
@@ -289,6 +301,14 @@ input[type="submit"]:hover {
     font-size: large;
 }
 
+/* Large screen monitor layout width settings */
+
+@media screen and (min-width: 648px) {
+    .card-column {
+        flex: 0 0 100%;
+    }
+
+}
 /* Mobile width settings */
 @media screen and (min-width: 768px) {
 
@@ -298,12 +318,14 @@ input[type="submit"]:hover {
 
 }
 
-/* Large screen monitor layout width settings */
 @media screen and (min-width: 992px) {
     .card-column {
         flex: 0 0 33%;
     }
 }
+/* Large screen monitor layout width settings */
+
+
 
 /* Start: footer section styling */
 .footer {

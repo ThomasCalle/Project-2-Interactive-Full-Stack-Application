@@ -67,7 +67,7 @@ svg.append("g")
   .attr("transform", "translate(0," + height + ")")
   .call(d3.axisBottom(x).tickSize(-height, 0, 0));
 
-  svg.append("g")
+
 // add the y Axis
 svg.append("g")
   .attr("class", "y axis")
