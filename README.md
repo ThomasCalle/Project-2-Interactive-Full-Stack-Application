@@ -46,7 +46,7 @@ THEN I am given a calendar and the ability to add task events related to the eve
     
 
 ## Solution URL:
-[Solution URL Link:](http://access-cal.herokuapp.com/)
+Solution URL Link: http://access-cal.herokuapp.com/
 
 ## YouTube Walkthrough Video:
 no video walkthrough required
@@ -69,6 +69,31 @@ no video walkthrough required
 1. Establishing a Profile and Settings page where the user can enter their preferences
 2.  
 3.  
+
+## Team Resources: 
+1. Google Doc: [Drive link.](https://docs.google.com/document/d/1v4as5Qv2Gpde1HeM4KnLYV29Weq0TUG6w2yb4b9bq-o/edit)
+2. Heroku: [Application link](https://access-cal.herokuapp.com/)
+3. GitHub: [Repo link](https://github.com/ThomasCalle/Project-2-Interactive-Full-Stack-Application)
+4. Instapage: [Landing page link](https://instapage.com/landing-page-templates?utm_medium=cpc&utm_source=google&utm_term=landing%20page%20templates&device=c&network=g&matchtype=e&utm_campaign=NA-G-S%7CCat_01%7CLEADS%7CLanding-Page&utm_agn=lp_templates&gclid=Cj0KCQiA0oagBhDHARIsAI-Bbgd-jLU3gVmoizDNAXsOQKPiqTFXkb_nJFpIfwKjGLSmvuCVSGLAryQaAl9UEALw_wcB#js-template-120)
+5. Tome.app: [Presentation Link](https://tome.app/thomascalle/interactive-full-stack-application-cleriaj8t04sc8n41jmrsos4x)
+
+## Dependencies:
+1. D3: Data-Driven Documents: [7.8.2](https://www.npmjs.com/package/d3)
+2. Node.bcrypt.js: [5.0.0](https://www.npmjs.com/package/bcrypt/v/5.0.0)
+3. Connect Session Store using Sequelize: [7.1.5](https://www.npmjs.com/package/connect-session-sequelize)
+4. Day.js: [1.11.7](https://www.npmjs.com/package/dayjs)
+5. Dotenv: [8.6.0](https://www.npmjs.com/package/dotenv)
+6. Express: [4.18.2](https://www.npmjs.com/package/express/v/4.18.2)
+7. Express Handlebars: [5.3.5](https://www.npmjs.com/package/express-handlebars/v/5.3.5)
+8. Express-session: [1.17.1](https://www.npmjs.com/package/express-session/v/1.17.1)
+9. Handlebars.js: [4.7.6](https://www.npmjs.com/package/handlebars/v/4.7.6)
+10. Node MySQL2: [2.3.3](https://www.npmjs.com/package/mysql2/v/2.3.3)
+11. Sequelize: [6.3.5](https://www.npmjs.com/package/sequelize/v/6.3.5)
+
+## Dev Dependencies:
+1. ESlint: [7.12.1](https://www.npmjs.com/package/eslint/v/7.12.1)
+2. eslint-config-prettier: [8.6.0](https://www.npmjs.com/package/eslint-config-prettier?activeTab=versions)
+3. prettier: [2.8.4](https://www.npmjs.com/package/prettier?activeTab=versions)
 
 ## License & Copyright ©
   
