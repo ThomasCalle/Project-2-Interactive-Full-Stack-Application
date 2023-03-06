@@ -11,5 +11,11 @@
     "last_name": "MArinov",
     "email": "test@test.com",
     "password": "passingword"
+},
+{
+    "first_name": "Thomas",
+    "last_name": "Calle",
+    "email": "thomas@friends.com",
+    "password": "c5kaiju"
 }
 ]
