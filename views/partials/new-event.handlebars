@@ -5,12 +5,12 @@
       <div class="modal-body">
         <div class="flex">
         <form id="newEvent">
-          <label for="name" class="form-label">Event Name:</label><input type="text" name="name">
-          <label for="description" class="form-label">Event Description:</label><input type="text" name="description">
-          <label for="dueDate" class="form-label">Due Date:</label><input type="date" name="dueDate">
+          <label for="name" class="form-label">Event Name:</label><input id="catName" type="text" name="name">
+          <label for="description" class="form-label">Event Description:</label><input id="catDesc" type="text" name="description">
+          <label for="dueDate" class="form-label">Due Date:</label><input id="catDD" type="date" name="dueDate">
           <label for="category" class="form-label">Category:</label><select id="cat-select" class="form-select" type="category" name="category"></select>
         </form>
-          <button id="sub-new-event" type="button" class="btn btn-primary">Add New Event</button>
+          <button id="sub-new-event" type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Add New Event</button>
         </div>
       </div>
     </div>

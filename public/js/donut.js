@@ -133,7 +133,7 @@ const renderEvent = async (event) => {
   $('#eventCategory').val(event.category.name)
 
   document.getElementById("buttons").innerHTML =
-  `<button id="editEvent" type="button" class="btn btn-primary" aria-label="Close" data-bs-toggle="modal" data-bs-target="#entryModal" data-id=${event.category.id}>Edit Event</button>
+  `<button id="editEvent" type="button" class="btn btn-primary" aria-label="Close" data-bs-toggle="modal" data-bs-target="#entryModal" data-id=${event.id}>Edit Event</button>
   <button id="deleteEvent" type="button" class="btn btn-danger" data-id=${event.category.id}>Delete Event</button>`;
 
 

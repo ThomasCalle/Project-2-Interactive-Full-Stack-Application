@@ -1,8 +1,12 @@
 const subNewBtn = document.getElementById("sub-new-event");
+const addNewBtn = document.getElementById("update-modal-btn-event");
 const subNewForm = document.getElementById("newEvent");
 const subCatForm = document.getElementById("sub-cat-form");
 const catListSel = document.getElementById("cat-select");
 const manageEvent = document.getElementById("buttons");
+const editEvent = document.getElementById("editEvent");
+var postOrPut = '';
+var putId = '';
 // Arrays for cascading dropdown (didn't end up working in time)
 
 // var months = [];
@@ -19,48 +23,70 @@ const manageEvent = document.getElementById("buttons");
 
 // };
 
-async function catFetcher(catList) {
-  const catFetch = await fetch('/category/', {
-    method: "GET",
-    headers: { 'Content-Type': 'application/json' },
-  });
-  catList = await catFetch.json();
-
-  catListSel.innerHTML = "";
-  catListSel.innerHTML += `<option value="0">New Category</option>`;
-  catList.forEach((cat) => {
-    catListSel.innerHTML += `<option value="${cat.id}">${cat.name}</option>`;
-  });
-  catListSel.value = "";
-};
-
-
-
 
 //event listener for modal
-subNewBtn.addEventListener('click', catFetcher());
-
-// editEvent.addEventListener('click', () => { });
+addNewBtn.addEventListener('click', async (event) => {
+  document.getElementById('entryModalLabel').innerHTML = "New Event";
+  subNewBtn.innerHTML = "Add Event";
+  postOrPut = "POST";
+  catFetcher();});
 
 manageEvent.addEventListener('click', async (event) => {
   console.log(event.target.dataset.id)
-  const delId = event.target.dataset.id;
+
   if(event.target.id == "deleteEvent") {
-    fetch('/api/events/' + delId, {
+    
+    fetch(`/api/events/${event.target.dataset.id}`, {
       method: "DELETE"
     }).then(res => res.text())
     .then(res => console.log(res))
+    .finally(() => {document.location.reload()})
+  
   } else if (event.target.id == "editEvent") {
     const eventFetch = await fetch(`/event/${event.target.dataset.id}`, {
       method: "GET",
       headers: { 'Content-Type': 'application/json' },
     })
+    document.getElementById('entryModalLabel').innerHTML = "Update Event";
+    subNewBtn.innerHTML = "Update Event";
+
     var eventData = await eventFetch.json();
+    var eventId = eventData.category.id;
+    
     console.log(eventData)
     
+    $('#eventName').val(eventData.name);
+    $('#eventDesc').val(eventData.description);
+    $('#eventDD').val(eventData.due_date);
+    $('#cat-select').val(catFetcher(eventId))
+    
+    postOrPut = "PUT";
+    putId = event.target.dataset.id;
   }
 })
 
+
+async function catFetcher(eventId) {
+  const catFetch = await fetch('/category/', {
+    method: "GET",
+    headers: { 'Content-Type': 'application/json' },
+  })
+  const catList = await catFetch.json();
+
+  catListSel.innerHTML = "";
+  var catListBreakdown = [`<option value="0">New Category</option>`]
+  catList.forEach((cat) => {
+    if(cat.id == eventId) {
+      catListBreakdown.push(`<option value="${cat.id}" selected>${cat.name}</option>`)
+    } else {
+    catListBreakdown.push(`<option value="${cat.id}">${cat.name}</option>`);
+    }});
+    console.log(catListBreakdown.join(""));
+    catListSel.innerHTML = catListBreakdown.join("");
+
+
+  catListSel.value = "";
+};
 
 $(document).ready(() => {
   $("#catFormFields").hide();
@@ -78,12 +104,6 @@ const toggleCategoryForm = () => {
 $("#cat-select").change(toggleCategoryForm);
 
 
-// $(addNewCat).on('click', (event) => {})
-
-// $(document.getElementById(t1-dur)).on('change', () => {
-
-// })
-
 async function catPost() {
   var catData = {};
   var catForm = new FormData(subCatForm);
@@ -99,7 +119,7 @@ async function catPost() {
   }
   catBody = JSON.stringify(catBody);
   await fetch('/api/categories', {
-    method: 'POST',
+    method: "POST",
     mode: 'cors',
     headers: {
       'Accept': 'application/json',
@@ -128,8 +148,8 @@ async function catPost() {
       }
       formBody = JSON.stringify(formBody);
       console.log(formBody)
-      fetch('/api/events/', {
-        method: 'POST',
+      fetch(`/api/events/${putId}`, {
+        method: postOrPut,
         mode: 'cors',
         headers: {
           'Accept': 'application/json',
@@ -138,17 +158,11 @@ async function catPost() {
         body: formBody,
       })
     })
+    .finally(() => {document.location.reload()});
 }
 
-// event listener for new Event.
-subNewBtn.addEventListener("click", (event) => {
-  event.preventDefault();
-  if ($("#cat-select").val() === "0") {
-    catPost();
-    return;
-
-  } else {
-    var formData = {};
+async function eventPost() {
+  var formData = {};
     var form = new FormData(subNewForm);
     form.forEach((value, key) => (formData[key] = value));
     console.log(formData)
@@ -160,9 +174,10 @@ subNewBtn.addEventListener("click", (event) => {
       "category_id": formData.category,
       // "user_id": req.session.id
     }
+    console.log(formData.id);
     formBody = JSON.stringify(formBody);
-    fetch('/api/events/', {
-      method: 'POST',
+    fetch(`/api/events/${putId}`, {
+      method: postOrPut,
       mode: 'cors',
       headers: {
         'Accept': 'application/json',
@@ -170,6 +185,18 @@ subNewBtn.addEventListener("click", (event) => {
       },
       body: formBody
     })
+    document.location.reload();
+}
+
+// event listener for new Event.
+subNewBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  if ($("#cat-select").val() === "0") {
+    catPost();
+    return;
+
+  } else {
+    eventPost();
   }
 });
 

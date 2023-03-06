@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
             due_date: req.body.due_date,
             location: "",
             category_id: req.body.category_id,
-            user_id: req.session.userId
+            user_id: req.session.userId,
         });
         res.send(eventData)
       } catch (err) {
@@ -31,20 +31,20 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    console.log(req.body);
     const eventUpdate = await Event.update({
-    where: {
-      id: req.body.id
-    },
     body: {
       name: req.body.name,
       description: req.body.description,
       due_date: req.body.due_date,
       location: "",
       category_id: req.body.category_id,
-      }
+      user_id: req.session.userId,
+      },
+    where: {
+      id: req.params.id,
+    }
     })
-    res.send(eventData)
+    res.send(eventUpdate)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
