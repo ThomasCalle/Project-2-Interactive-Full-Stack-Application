@@ -12,36 +12,36 @@ const withAuth = require('../../utils/auth');
 //  - use helper to calculate T1, T2, T3 in to API
 
 router.post('/', async (req, res) => {
-    try {
-        console.log(req.body.id);
-        const eventData = await Event.create({
-            name: req.body.name,
-            description: req.body.description,
-            due_date: req.body.due_date,
-            location: "",
-            category_id: req.body.category_id,
-            user_id: req.session.userId
-        });
-        res.send(eventData)
-      } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-      }
-    });
-
-router.put('/:id', withAuth, async (req, res) => {
   try {
-    console.log(req.body);
-    const eventUpdate = await Event.update({
-    where: {
-      id: req.body.id
-    },
-    body: {
+    console.log(req.body.id);
+    const eventData = await Event.create({
       name: req.body.name,
       description: req.body.description,
       due_date: req.body.due_date,
       location: "",
       category_id: req.body.category_id,
+      user_id: req.session.userId
+    });
+    res.send(eventData)
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    console.log(req.body);
+    const eventUpdate = await Event.update({
+      where: {
+        id: req.body.id
+      },
+      body: {
+        name: req.body.name,
+        description: req.body.description,
+        due_date: req.body.due_date,
+        location: "",
+        category_id: req.body.category_id,
       }
     })
     res.send(eventData)
@@ -49,16 +49,17 @@ router.put('/:id', withAuth, async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-  })
+})
 
 router.delete('/:id', withAuth, async (req, res) => {
 
   try {
     Event.destroy({
       where: {
-      id: req.params.id
-    }}
-      );
+        id: req.params.id
+      }
+    }    );
+    res.status(200).end();
   } catch {
     res.status(500).json(err);
   }

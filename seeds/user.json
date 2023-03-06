@@ -1,12 +1,11 @@
 [{
-    "id": 1, 
     "first_name": "Stephen",
     "last_name": "Cardie",
     "email": "stephen@stegra.ca",
     "password": "passingword"
 },
 {
-    "id": 2,
+
     "first_name": "Stefan",
     "last_name": "MArinov",
     "email": "test@test.com",

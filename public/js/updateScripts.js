@@ -40,24 +40,14 @@ async function catFetcher(catList) {
 subNewBtn.addEventListener('click', catFetcher());
 
 
-manageEvent.addEventListener('click', async (event) => {
-  console.log(event.target.dataset.id)
-  const delId = event.target.dataset.id;
-  if(event.target.id == "deleteEvent") {
-    fetch('/api/events/' + delId, {
-      method: "DELETE"
-    }).then(res => res.text())
-    .then(res => console.log(res))
-  } else if (event.target.id == "editEvent") {
-    const eventFetch = await fetch(`/event/${event.target.dataset.id}`, {
-      method: "GET",
+$("#deleteEvent").on('click', async (event) => {
+  const deletedEvent = await fetch(`/api/events/${ event.target.dataset.id}`, {
+      method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
-    })
-    var eventData = await eventFetch.json();
-    console.log(eventData)
-    
+    });
+    document.location.replace('/');
   }
-})
+)
 
 
 $(document).ready(() => {
