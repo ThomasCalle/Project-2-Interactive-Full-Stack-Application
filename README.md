@@ -1,14 +1,14 @@
-# AccessCal (Accessability Calendar) Full Stack Application.
+# AccessCal (Accessibility Calendar) Full Stack Application.
 
 Team: 09-Nines Full Stack Application.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
 ## Description:
-Welcome to AccessCal our Interactive Full-Stack Application developed for those with Attention-Deficit/Hyperactivity Disorder(ADHD). The application provides a comprehensive suite of tools tailored to those with time-blindness to visualise their calendar and how each event tracks to the deadline. The user can create various event and associate various various thresholds (i.e. reminders) that will help them visualise the criticality of each event. 
+Welcome to AccessCal our Interactive Full-Stack Application developed for those with Attention-Deficit/Hyperactivity Disorder(ADHD). The application provides a comprehensive suite of tools tailored to those with time-blindness to visualize their calendar and how each event tracks to the deadline. The user can create various event and associate various various thresholds (i.e. reminders) that will help them visualize the criticality of each event. 
 
 
-The application is device-friedly allowing the user to intergrate a visual event tracker tailored their personal devices in order to meet the subjects needs. 
+The application is device-friendly allowing the user to integrate a visual event tracker tailored their personal devices in order to meet the subjects needs. 
 
 AccessCal offers a streamlined and intuitive user interface, allowing users to effectively manage their own visual event tracker. 
 
@@ -44,7 +44,7 @@ PRE-Requisites:
 - you must have MySQL/MariaDB installed on your computer prior to proceeding
 
 
-### Databse setup
+### Database setup
 This must be executed before launching the application
 1. Log into your MySQL/MariaDB server.
 2. Execute the following command:
@@ -105,7 +105,7 @@ Video showing the app functionality is found here: https://youtu.be/wM-R1IKJ7MY
 
 ## Screenshots:
 ### Figure 1. Landing Page
-![ladnging Page](./assets/images/AC-01-landing.png)
+![Landing Page](./assets/images/AC-01-landing.png)
 
 
 ### Figure 2. The calendar visual
@@ -118,8 +118,8 @@ Video showing the app functionality is found here: https://youtu.be/wM-R1IKJ7MY
 
 ## Continued Development:
 1. Establishing a Profile and Settings page where the user can enter their preferences
-2.  
-3.  
+2. Enhancing the mobile experience with a potentially larger graph bars to enable ease of click
+3. Adding threshold to events that override the category event threshold settings
 
 ## Team Resources: 
 1. Google Doc: [Drive link.](https://docs.google.com/document/d/1v4as5Qv2Gpde1HeM4KnLYV29Weq0TUG6w2yb4b9bq-o/edit)
