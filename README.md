@@ -1,4 +1,6 @@
-# Project-02-Interactive-Full-Stack-Application
+# AccessCal (Accessability Calendar) Full Stack Application.
+
+Team: 09-Nines Full Stack Application.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
@@ -99,7 +101,7 @@ The walkthrough video provides information on the application usage.
 Solution URL Link: http://access-cal.herokuapp.com/
 
 ## Walkthrough Video:
-Video showing the app functionality is found here: 
+Video showing the app functionality is found here: https://youtu.be/wM-R1IKJ7MY
 
 ## Screenshots:
 ### Figure 1. Landing Page
@@ -155,9 +157,9 @@ SOFTWARE.
 
 ## Authors
 Follow our team on Github! Additional questions or concerns? Feel free to contact us!
-- [ThomasCalle](https://github.com/ThomasCalle)
-- [Stephen Cardie](https://github.com/omgthegreenranger)
-- [Stefan Marinov](https://github.com/scorpionfiko)
+- [ThomasCalle](https://github.com/ThomasCalle) Full Stack Dev. (Frontend Focus)
+- [Stefan Marinov](https://github.com/scorpionfiko) Full Stack Dev. (Overall Focus) 
+- [Stephen Cardie](https://github.com/omgthegreenranger) Full Stack Dev. (Backend Focus).
 
 See you soon!
 
